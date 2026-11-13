@@ -227,3 +227,8 @@
 - 旧整盘 UEFI 测试盘保留为 vm/test-uefi-wholedisk.qcow2；共存测试盘为 vm/test-uefi.qcow2
 - 交付：cp 新 ISO 覆盖 /run/media/robola/Ventoy/CachyOS-Offline.iso + sync + sha256sum -c 成功（ed71556c…）
 - 待办：git 推送仍需用户终端认证；本轮新增改动（test-iso.sh、日志、r2-* 截图）待提交
+
+### 22:24 — 中英文 README 编写完成（待提交推送）
+
+- 新增 README.md：双语（English/中文）高规格文档，含徽章、目录、特性、原理流水线图、构建四步快速开始与分阶段表（含实测数据：684 包/1.5GiB 仓库/4324 MiB 安装/4789538816 字节 ISO/8.27 分钟）、mkarchiso 内部机制、安装器双模式说明、自动化测试全流程（VM 配置/QMP 操作表/共存预置命令/验证清单/结果矩阵）、仓库结构、可复现性、FAQ、免责声明
+- 嵌入 7 张实测截图（vm/r2-*，已随 2c8c1cc 提交，GitHub 可渲染）
