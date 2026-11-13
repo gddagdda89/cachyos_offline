@@ -3592,4 +3592,100 @@ mkfs.fat 4.2 (2021-01-31)
 [mkarchiso] INFO: Creating SquashFS image, this may take some time...
 Parallel mksquashfs: Using 16 processors
 Creating 4.0 filesystem on /home/robola/dev/cachyos_iso/CachyOS-Live-ISO/build/iso/arch/x86_64/airootfs.sfs, block size 1048576.
-[/                                                         ]      0/112047   0%[\                                                         ]   1200/193582   0%[==========-                                               ]  35900/193582  18%[===========/                                              ]  39400/193582  20%[============/                                             ]  43700/193582  22%[============|                                             ]  43900/193582  22%[=============-                                            ]  46200/193582  23%
+[/                                                         ]      0/112047   0%[\                                                         ]   1200/193582   0%[==========-                                               ]  35900/193582  18%[===========/                                              ]  39400/193582  20%[============/                                             ]  43700/193582  22%[============|                                             ]  43900/193582  22%[=============-                                            ]  46200/193582  23%[======================================================|   ] 185000/193582  95%Unrecognised xattr prefix system.posix_acl_default
+Unrecognised xattr prefix system.posix_acl_default
+Unrecognised xattr prefix system.posix_acl_access
+
+[=========================================================|] 193582/193582 100%
+
+Exportable Squashfs 4.0 filesystem, xz compressed, data block size 1048576
+	compressed data, compressed metadata, compressed fragments,
+	compressed xattrs, compressed ids
+	duplicates are removed
+Filesystem size 4425612.66 Kbytes (4321.89 Mbytes)
+	50.52% of uncompressed filesystem size (8760796.92 Kbytes)
+Inode table size 1769492 bytes (1728.02 Kbytes)
+	21.66% of uncompressed inode table size (8169744 bytes)
+Directory table size 2278984 bytes (2225.57 Kbytes)
+	33.79% of uncompressed directory table size (6744516 bytes)
+Xattr table size 118 bytes (0.12 Kbytes)
+	42.14% of uncompressed xattr table size (280 bytes)
+Number of duplicate files found 12291
+Number of inodes 234327
+Number of files 178803
+Number of fragments 3278
+Number of symbolic links 41073
+Number of device nodes 0
+Number of fifo nodes 0
+Number of socket nodes 0
+Number of directories 14451
+Number of hard-links 2444
+Number of ids (unique uids + gids) 22
+Number of uids 12
+	root (0)
+	plasmalogin (957)
+	unknown (110)
+	robola (1000)
+	fwupd (963)
+	uuidd (971)
+	rpcuser (34)
+	unknown (87)
+	rtkit (955)
+	rpc (32)
+	systemd-network (977)
+	tss (972)
+Number of gids 20
+	root (0)
+	alpm (970)
+	named (40)
+	network (90)
+	unknown (110)
+	polkitd (102)
+	robola (1000)
+	ftp (11)
+	tty (5)
+	dbus (81)
+	utmp (996)
+	games (50)
+	fwupd (963)
+	uuidd (971)
+	rpcuser (34)
+	rtkit (955)
+	rpc (32)
+	systemd-network (977)
+	tss (972)
+	rfkill (980)
+[mkarchiso] INFO: Creating checksum file for self-test...
+[mkarchiso] INFO: Done!
+[mkarchiso] INFO: Creating ISO image...
+xorriso 1.5.8.pl02 : RockRidge filesystem manipulator, libburnia project.
+
+xorriso : NOTE : Environment variable SOURCE_DATE_EPOCH encountered with value 1794569596
+Drive current: -outdev 'stdio:/home/robola/dev/cachyos_iso/CachyOS-Live-ISO/out/desktop/cachyos-2026.11.13-x86_64.iso'
+Media current: stdio file, overwriteable
+Media status : is blank
+Media summary: 0 sessions, 0 data blocks, 0 data,  843g free
+Added to ISO image: directory '/'='/home/robola/dev/cachyos_iso/CachyOS-Live-ISO/build/iso'
+xorriso : UPDATE :     106 files added in 1 seconds
+xorriso : UPDATE :     106 files added in 1 seconds
+xorriso : NOTE : Copying to System Area: 432 bytes from file '/home/robola/dev/cachyos_iso/CachyOS-Live-ISO/build/iso/boot/syslinux/isohdpfx.bin'
+libisofs: NOTE : Automatically adjusted MBR geometry to 998/148/63
+libisofs: NOTE : Aligned image size to cylinder size by 1265 blocks
+xorriso : UPDATE :  4.44% done
+xorriso : UPDATE :  52.51% done
+ISO image produced: 2338642 sectors
+Written to medium : 2338642 sectors at LBA 0
+Writing to 'stdio:/home/robola/dev/cachyos_iso/CachyOS-Live-ISO/out/desktop/cachyos-2026.11.13-x86_64.iso' completed successfully.
+
+[mkarchiso] INFO: Done!
+4.5G	/home/robola/dev/cachyos_iso/CachyOS-Live-ISO/out/desktop/cachyos-2026.11.13-x86_64.iso
+==> Done [Build ISO] cachyos-desktop-linux-261113.iso
+==> Finished building [desktop]
+ --> checksums for [cachyos-desktop-linux-261112.iso] already created
+==> WARNING: Skipping signing due to lack of GPG key
+  -> creating checksums for [cachyos-desktop-linux-261113.iso]
+==> WARNING: Skipping signing due to lack of GPG key
+ --> Time run_build: 8.27 minutes
+==> ERROR: An unknown error has occurred. Exiting...
+==> 已复制到 output/CachyOS-Offline.iso
+==> 完成: output/CachyOS-Offline.iso (4.5G)

@@ -38,13 +38,16 @@ if [[ $mode == uefi || $mode == disk-uefi ]]; then
 fi
 
 cdrom=()
+boot=(-boot order=c)
 if [[ $mode == uefi || $mode == bios ]]; then
     cdrom=(-drive "file=$iso,media=cdrom,readonly=on")
+    boot=(-boot order=d)
 fi
 
 qemu-system-x86_64 -enable-kvm -cpu host -smp 4 -m 4G \
     -nic none \
     "${cdrom[@]}" \
+    "${boot[@]}" \
     -drive "file=$disk,if=virtio,format=qcow2" \
     "${fw[@]}" \
     -display none -daemonize \

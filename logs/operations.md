@@ -207,3 +207,23 @@
 - 提交前敏感信息扫描：命中均为包名（libsecret/libfido2 等）与 pacman 提示，无真实凭据；test1234 为一次性 VM 测试密码
 - 初始提交：57 个文件约 11M（源码+日志+测试截图）；大体积产物由 .gitignore 排除
 - git push -u origin main
+- 结果：本地提交成功 f3ed8c1（57 文件，14560 行）；推送失败——无 GitHub 凭据（credential store 仅含其他主机、无 gh CLI、无 GitHub SSH 密钥），待用户在本机终端交互认证后推送
+
+### 19:41 — 用户重建双模式 ISO 完成；内容验证通过
+
+- 用户已跑 ./scripts/build-iso.sh：8.27 分钟，output/CachyOS-Offline.iso 4789538816 字节（较单模式版 +8MB，即 os-prober/ntfs-3g/libntfs-3g）
+- sha256: ed71556cdf73a367727219e9aa9586c1c4547d7bc6f8d0cee28995543ac82093
+- 从 ISO 提取 airootfs.sfs 核验：opt/offline-install/offline-install.sh 与源码 cmp 逐字节一致（含"选择模式"）；离线仓库含 os-prober-1.85/ntfs-3g/libntfs-3g；live 系统本身也装了 os-prober
+- 开始任务#8 断网回归：整盘 UEFI → 整盘 BIOS → 共存 UEFI（预置 ESP+NTFS 占位+空 root，验证不擦盘/复用 ESP/可启动）
+
+### 22:15 — 双模式 ISO 三项断网回归全部通过；U 盘已更新
+
+- 整盘 UEFI（任务#9）：模式1 安装→GRUB Boot0005→硬盘启动→SDDM→test1234 登录 KDE Wayland（r2-uefi-*.png）
+- 整盘 BIOS（任务#10）：模式1 安装→os-prober 按模式1 禁用（grub-mkconfig 警告符合预期）→硬盘启动→登录桌面（r2-bios-*.png）
+- 共存 UEFI（任务#11）：新空盘预置 vda1=ESP512M(ef00, 含 EFI/Microsoft/Boot/bootmgfw.efi 标记)+vda2=NTFS8G(0700, windows-data.txt)+vda3=空 root；模式2 选 root=3 安装
+  - 验证：分区表三原样（EF00/0700/8300）；ESP 标记留存且新增 EFI/CachyOS/grubx64.efi（只挂载不格式化）；NTFS 数据留存；目标 /etc/default/grub 含 GRUB_DISABLE_OS_PROBER=false；硬盘启动→登录桌面（r2-coex-*.png）
+  - 说明：NTFS 为占位分区无真实 Windows 引导文件，os-prober 不产生 Windows 菜单项属预期；真实 Windows 盘会自动生成
+- 测试脚本修正：test-iso.sh 增加 -boot order=d（live 模式优先光驱）/order=c（磁盘模式）——此前 VM 因硬盘旧系统/NVRAM 残留优先从硬盘启动
+- 旧整盘 UEFI 测试盘保留为 vm/test-uefi-wholedisk.qcow2；共存测试盘为 vm/test-uefi.qcow2
+- 交付：cp 新 ISO 覆盖 /run/media/robola/Ventoy/CachyOS-Offline.iso + sync + sha256sum -c 成功（ed71556c…）
+- 待办：git 推送仍需用户终端认证；本轮新增改动（test-iso.sh、日志、r2-* 截图）待提交
