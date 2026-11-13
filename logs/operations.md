@@ -266,3 +266,13 @@
 - 修复：生成纯包名；单版本本地仓库、快照 SHA256 和构建后完整 pkglist 比对继续保证版本锁定，无需刷新或下载包。
 - 验证：15 项回归测试通过；新增测试直接调用已安装 mkarchiso 的真实 BIOS 校验函数，先复现旧格式失败再验证新格式通过。重新生成 profile，并执行本机 mkarchiso 全套 options/profile 校验（仅跳过最终 _build 调用）：Done / PROFILE_VALIDATION_PASSED。
 - 未执行完整 ISO 构建；用户可以再次运行 ./scripts/build-iso.sh。保留用户此次运行生成的 logs/build-iso.log 修改，不纳入修复提交。
+
+### 23:51 — 新构建流程（261113-r1）ISO 验证与三项断网回归全部通过
+
+- 背景：用户更新构建方式（e616829 发布锁定+便携安装器、ddf7ec6 bare 包名修正）；新 ISO 23:16 产出（4789538816 字节，sha256 与 .sha256 一致），另产出便携包 CachyOS-Offline-261113-r1.tar（sha256 校验通过）
+- 静态验证：tests/test_offline.py 15 项全过；release.py check-pkglist 与发布锁完全一致；ISO 内 airootfs 解包核对——安装器与源码逐字节一致、/opt/offline-install 与 /opt/offline-repo 符号链接指向 cachyos-offline bundle、version-tag=261113-r1、bundle 全量 SHA256SUMS 1385 文件通过、684 包=684 db 条目、os-prober/ntfs-3g 在仓库与 live pkglist 中、display-manager→plasmalogin、两个 timer 掩蔽
+- 整盘 UEFI（r3-uefi-*）：模式1 安装→GRUB i386-pc+x86_64-efi、Boot0005、os-prober 禁用→目标系统含 /usr/local/sbin/cachyos-repo-mode 与三份资产、pacman.conf 为离线版→硬盘启动 SDDM→test 登录 KDE Wayland
+- 共存 UEFI（r3-coex-*）：预置 EF00/0700/8300+winmarker/windata→模式2 root=3 安装→分区表三原样、ESP 留存 Microsoft 标记并新增 CachyOS、NTFS 数据留存、GRUB_DISABLE_OS_PROBER=false、仅 x86_64-efi→硬盘启动登录桌面
+- 整盘 BIOS（r3-bios-*）：模式1 安装→os-prober 禁用警告符合预期→硬盘启动 SDDM→登录桌面
+- 测试中发现：pacstrap 自带 --noconfirm（[Y/n] 提示不消耗输入）；QMP 向刚启动的 Konsole 打字会丢字符，需等窗口就绪并分短命令发送
+- 旧盘归档：test-uefi-coex-r0/test-bios-r0/test-uefi-wholedisk-r1/test-uefi-coex-r1；验证临时目录 work/verify-r1 已清理
