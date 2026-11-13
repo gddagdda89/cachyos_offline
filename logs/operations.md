@@ -239,3 +239,8 @@
 - git push -u origin main 成功（凭据已生效）：远端 HEAD=6e01899，与本地一致，工作区干净
 - 核验：GitHub 页面双语 README 正常渲染（徽章/目录/构建与测试章节齐全）；README 引用的 7 张截图均在远端树中（vm/ 共 55 张 png）
 - 仓库地址：https://github.com/gddagdda89/cachyos_offline
+
+### 22:36 — README 增加 AI 生成声明 + v4 FAQ
+
+- 两处免责声明（英/中）首行加粗声明"本文档由 AI 生成"，并注明数据来自真实运行、可复现
+- FAQ 新增 v4 条目（英/中）：脚本改动小（download-packages.sh 指向 cachyos-*-v4 配置后重下载重建），但构建机与目标机都需 AVX-512；本机 i7-10700F 无 AVX-512（已查 /proc/cpuinfo 确认），目标 E5-2666 v3 亦仅 v3，故默认 v3
