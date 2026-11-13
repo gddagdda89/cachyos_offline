@@ -2,6 +2,7 @@
 import importlib.util
 import io
 import json
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -103,6 +104,37 @@ class ReleaseTests(unittest.TestCase):
         with patch.object(release, 'ROOT', self.root), patch.object(release, 'check_upstream'), patch.object(release, 'load', return_value=('r1', snapshot, lock)):
             with self.assertRaisesRegex(ValueError, '目标包清单已改变'):
                 release.verify()
+
+    def test_live_list_passes_real_mkarchiso_boot_package_validation(self):
+        executable = shutil.which('mkarchiso')
+        if not executable:
+            self.skipTest('mkarchiso is not installed')
+        source = Path(executable).read_text()
+        validator = re.search(r'^_validate_requirements_bootmode_bios\.syslinux\(\) \{\n.*?^\}', source, re.M | re.S)
+        self.assertIsNotNone(validator, 'mkarchiso BIOS validator changed; update the regression test')
+        names = ['syslinux', 'memtest86+', 'memtest86+-efi', 'edk2-shell']
+        lock = {'packages': {'live': names}, 'info': {n: {'name': n, 'version': '1-1'} for n in names}}
+        (self.root / 'syslinux').mkdir()
+        (self.root / 'syslinux/syslinux.cfg').touch()
+        packages = self.root / 'packages.x86_64'
+        script = (validator.group() + '\n'
+                  '_validate_common_requirements_bootmode_bios() { return 0; }\n'
+                  '_msg_error() { echo "$*" >&2; }\n'
+                  '_msg_info() { echo "$*"; }\n'
+                  'profile=$1; bootmode=bios.syslinux; validation_error=0\n'
+                  'mapfile -t pkg_list < "$profile/packages.x86_64"\n'
+                  '_validate_requirements_bootmode_bios.syslinux\n'
+                  'exit "$validation_error"\n')
+        # Reproduce the reported bug against the real installed validator.
+        packages.write_text(''.join(f'{n}=1-1\n' for n in names))
+        broken = subprocess.run(['bash', '-c', script, 'test', str(self.root)], capture_output=True, text=True)
+        self.assertNotEqual(broken.returncode, 0)
+        self.assertIn("'syslinux' package is missing", broken.stderr)
+        packages.write_text(release.live_package_list(lock))
+        fixed = subprocess.run(['bash', '-c', script, 'test', str(self.root)], capture_output=True, text=True)
+        self.assertEqual(fixed.returncode, 0, fixed.stderr)
+        self.assertEqual(packages.read_text().splitlines(), names)
+        self.assertNotIn('not in the package list', fixed.stdout)
 
     def test_repository_aliases_are_local(self):
         app = self.pkg('app', '1-1')

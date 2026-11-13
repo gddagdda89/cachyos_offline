@@ -258,3 +258,11 @@
 - 检查通过：14 项 unittest（包含真实 repo-add/pacman 离线解析夹具）、全部 Shell bash -n、Python 编译、git diff --check；实际 target/Live 两个闭包与 SHA256 校验；独立 tar 解压后全量 SHA256 校验；离线包/ISO 内嵌安装器与最终源码逐字节一致；1006 个 Live 版本规格与锁文件一致。
 - 独立包 SHA256：3d2904778938c627a26df205393bb75c05558e09aaefddba1957b16ee0b2708a。
 - 未执行：新版 ISO 构建和端到端安装/重启回归。主机 sudo -n 提示需要密码；现有 output/CachyOS-Offline.iso 仍为旧版，没有冒充新产物。新 --refresh 联网下载路径亦未实跑，本轮使用已存在包材料。
+
+
+### 23:08 — 修复 mkarchiso 无法识别带版本约束的启动包
+
+- 原因：生成的 packages.x86_64 使用 name=version，但本机 archiso 92 的启动依赖校验按纯包名匹配，导致误报 syslinux 缺失，同时漏识别 memtest86+/memtest86+-efi/edk2-shell。
+- 修复：生成纯包名；单版本本地仓库、快照 SHA256 和构建后完整 pkglist 比对继续保证版本锁定，无需刷新或下载包。
+- 验证：15 项回归测试通过；新增测试直接调用已安装 mkarchiso 的真实 BIOS 校验函数，先复现旧格式失败再验证新格式通过。重新生成 profile，并执行本机 mkarchiso 全套 options/profile 校验（仅跳过最终 _build 调用）：Done / PROFILE_VALIDATION_PASSED。
+- 未执行完整 ISO 构建；用户可以再次运行 ./scripts/build-iso.sh。保留用户此次运行生成的 logs/build-iso.log 修改，不纳入修复提交。

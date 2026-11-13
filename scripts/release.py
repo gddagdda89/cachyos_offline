@@ -351,6 +351,13 @@ def bundle(verified=None):
     return destination
 
 
+def live_package_list(lock):
+    # mkarchiso checks boot requirements by exact package name, not pacman specs.
+    # Versions are enforced by the single-version, hash-verified local repository
+    # and by check_pkglist after the build.
+    return ''.join(f'{lock["info"][f]["name"]}\n' for f in lock['packages']['live'])
+
+
 def integrate():
     release, snapshot, lock = verify()
     payload = bundle((release, snapshot, lock))
@@ -393,8 +400,7 @@ def integrate():
         grub = profile / 'grub/grub.cfg'
         grub.write_text(re.sub(r'CACHYOS_VERSION="[^"]*"', f'CACHYOS_VERSION="{release}"', grub.read_text()))
         (profile / 'pacman.conf').write_text(local_conf(snapshot / 'live-repo'))
-        (profile / 'packages.x86_64').write_text(''.join(
-            f'{lock["info"][f]["name"]}={lock["info"][f]["version"]}\n' for f in lock['packages']['live']))
+        (profile / 'packages.x86_64').write_text(live_package_list(lock))
         p = profile / 'profiledef.sh'
         text = p.read_text().replace('file_permissions=(', 'file_permissions=(\n'
              '  ["/opt/cachyos-offline/offline-install/offline-install.sh"]="0:0:755"\n'
