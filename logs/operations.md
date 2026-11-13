@@ -232,3 +232,10 @@
 
 - 新增 README.md：双语（English/中文）高规格文档，含徽章、目录、特性、原理流水线图、构建四步快速开始与分阶段表（含实测数据：684 包/1.5GiB 仓库/4324 MiB 安装/4789538816 字节 ISO/8.27 分钟）、mkarchiso 内部机制、安装器双模式说明、自动化测试全流程（VM 配置/QMP 操作表/共存预置命令/验证清单/结果矩阵）、仓库结构、可复现性、FAQ、免责声明
 - 嵌入 7 张实测截图（vm/r2-*，已随 2c8c1cc 提交，GitHub 可渲染）
+
+### 22:26 — README 提交并推送成功
+
+- 提交 6e01899 "docs: 中英文 README（构建/测试流程与实测截图）"（README.md + 日志，482 行）
+- git push -u origin main 成功（凭据已生效）：远端 HEAD=6e01899，与本地一致，工作区干净
+- 核验：GitHub 页面双语 README 正常渲染（徽章/目录/构建与测试章节齐全）；README 引用的 7 张截图均在远端树中（vm/ 共 55 张 png）
+- 仓库地址：https://github.com/gddagdda89/cachyos_offline
