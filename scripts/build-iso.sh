@@ -1,31 +1,19 @@
 #!/usr/bin/env bash
-# 一键构建离线 ISO：集成离线内容 -> 官方 buildiso.sh -> 产物复制到 output/
-# 用法: ./scripts/build-iso.sh   （只需输入一次 sudo 密码，构建与复制共用同一 sudo 会话）
+# The package snapshot is prepared separately; this step never syncs online repos.
 set -euo pipefail
-
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-log="$root/logs/build-iso.log"
-marker="$root/logs/.build-start"
-
 "$root/scripts/integrate-offline.sh"
-
-touch "$marker"
-echo "==> 开始构建 ISO（sudo，构建+复制同一会话）" | tee "$log"
-# buildiso.sh 的 EXIT trap 成功时也会打印 ERROR 文案并返回非零，故以产物为准。
-# 构建约 8 分钟，超过 sudo 密码缓存时限，因此构建与复制放在同一个 sudo 会话内。
-sudo bash -c '
-    cd "$1/CachyOS-Live-ISO" || exit 1
-    ./buildiso.sh -p desktop -v
-    iso=$(find out -name "*.iso" -newer "$2" 2>/dev/null | head -1)
-    if [[ -z $iso || ! -f $iso ]]; then
-        echo "==> 构建失败：未找到新 ISO"
-        exit 1
-    fi
-    mkdir -p "$1/output"
-    cp --reflink=auto "$iso" "$1/output/CachyOS-Offline.iso"
-    chown "$3:$3" "$1/output/CachyOS-Offline.iso"
-    echo "==> 已复制到 output/CachyOS-Offline.iso"
-' bash "$root" "$marker" "$USER" 2>&1 | tee -a "$log"
-
-( cd "$root/output" && sha256sum CachyOS-Offline.iso > CachyOS-Offline.iso.sha256 )
-echo "==> 完成: output/CachyOS-Offline.iso ($(du -h "$root/output/CachyOS-Offline.iso" | cut -f1))" | tee -a "$log"
+mkdir -p "$root/logs" "$root/output"
+# Never reuse mkarchiso run-once markers from another build/profile.
+work=$(mktemp -d "$root/work/build.XXXXXX")
+iso_out=$(mktemp -d "$root/work/iso.XXXXXX")
+release=$(cat "$root/config/release")
+epoch=$(python3 -c 'import json, sys; print(json.load(open(sys.argv[1]))["source_date_epoch"])' "$root/releases/$release.json")
+sudo env SOURCE_DATE_EPOCH="$epoch" mkarchiso -v -w "$work" -o "$iso_out" "$root/work/profile" 2>&1 | tee "$root/logs/build-iso.log"
+python3 "$root/scripts/release.py" check-pkglist "$work/iso/arch/pkglist.x86_64.txt"
+mapfile -t isos < <(find "$iso_out" -maxdepth 1 -name '*.iso' -type f)
+[[ ${#isos[@]} == 1 ]] || { echo '构建失败：未得到唯一 ISO' >&2; exit 1; }
+cp --reflink=auto "${isos[0]}" "$root/output/CachyOS-Offline.iso"
+(cd "$root/output" && sha256sum CachyOS-Offline.iso > CachyOS-Offline.iso.sha256)
+echo "==> 完成: $root/output/CachyOS-Offline.iso"
+echo "构建目录保留在 $work；确认后可自行删除。"

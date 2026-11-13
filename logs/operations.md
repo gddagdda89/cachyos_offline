@@ -244,3 +244,17 @@
 
 - 两处免责声明（英/中）首行加粗声明"本文档由 AI 生成"，并注明数据来自真实运行、可复现
 - FAQ 新增 v4 条目（英/中）：脚本改动小（download-packages.sh 指向 cachyos-*-v4 配置后重下载重建），但构建机与目标机都需 AVX-512；本机 i7-10700F 无 AVX-512（已查 /proc/cpuinfo 确认），目标 E5-2666 v3 亦仅 v3，故默认 v3
+
+
+### 23:01 — 四项改进及独立离线包完成（261113-r1）
+
+- 仓库切换：安装目标仅启用离线仓库；新增 cachyos-repo-mode online，禁用旧快照并完整 pacman -Syu；升级失败保留在线模式；已更新系统拒绝切回旧包版本，用户自定义配置不会静默覆盖。
+- 发布锁定：新增 release.py 和 config/release；显式 --refresh 新编号才同步。保存目标/Live 包、签名、源数据库、输入、工具来源、SHA256、上游 commit。普通重建只校验和消费快照，上游 HEAD 不符直接失败。
+- 首批快照从现有材料导入：target 684 包，Live 1006 包；旧 Live 原始同步数据库已不存在，保存已装 pkglist 和重建本地数据库，文档明确此限制。大文件在 snapshots/，版本锁 releases/261113-r1.json 纳入 Git；同版跨机复建需另行归档快照材料。
+- 仓库从临时干净目录生成，只接受选定包；验证成员和依赖闭包后发布；repo 已切为快照链接，原始目录保留为 repo.legacy-*，不混入旧版本/孤儿条目。
+- 共存安装按 Live 固件模式决定引导。BIOS+ESP、UEFI 无/多个 ESP、BIOS+GPT 无 BIOS boot 均在格式化前失败；不再把任意 vfat 分区当 ESP。文档区分历史 VM 证据、真实 Windows/硬件未测范围。
+- 独立离线包：output/CachyOS-Offline-261113-r1.tar（约 1.5 GiB），含目标仓库、共享安装器、模式切换工具、版本与校验清单；官方 Live 中可解包运行，相对自身定位仓库。
+- 单 ISO 复用同一离线包；从固定 Git tree 生成 work/profile，使用锁定 Live 仓库直接调用 mkarchiso；不再使用会联网刷新镜像/修改主机 mkarchiso 的上游包装器，构建后核对完整 Live pkglist。
+- 检查通过：14 项 unittest（包含真实 repo-add/pacman 离线解析夹具）、全部 Shell bash -n、Python 编译、git diff --check；实际 target/Live 两个闭包与 SHA256 校验；独立 tar 解压后全量 SHA256 校验；离线包/ISO 内嵌安装器与最终源码逐字节一致；1006 个 Live 版本规格与锁文件一致。
+- 独立包 SHA256：3d2904778938c627a26df205393bb75c05558e09aaefddba1957b16ee0b2708a。
+- 未执行：新版 ISO 构建和端到端安装/重启回归。主机 sudo -n 提示需要密码；现有 output/CachyOS-Offline.iso 仍为旧版，没有冒充新产物。新 --refresh 联网下载路径亦未实跑，本轮使用已存在包材料。

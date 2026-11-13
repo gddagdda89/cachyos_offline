@@ -5,8 +5,10 @@
 # 用法: sudo /opt/offline-install/offline-install.sh
 set -euo pipefail
 
-REPO=/opt/offline-repo
-INSTDIR=/opt/offline-install
+# The same directory structure works inside the ISO and in an extracted bundle.
+INSTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+REPO="$(cd "$INSTDIR/../offline-repo" && pwd)"
+source "$INSTDIR/boot-policy.sh"
 MNT=/mnt
 LOG=/var/log/offline-install.log
 
@@ -16,8 +18,24 @@ die() { echo "错误: $*" >&2; exit 1; }
 trap 'echo; echo "!! 安装中断，请查看日志: $LOG"; echo "!! 若已挂载目标分区，可执行 umount -R /mnt 后重试"' ERR
 
 [[ $EUID -eq 0 ]] || die "请用 sudo 运行"
+[[ -d /run/archiso ]] || die "请在 CachyOS Live ISO 环境运行安装器"
 [[ -f $REPO/offline.db ]] || die "未找到离线仓库: $REPO"
 [[ -f $INSTDIR/packages.txt ]] || die "未找到包清单: $INSTDIR/packages.txt"
+# Verify the entire bundle before offering any destructive action.
+[[ -f $INSTDIR/../SHA256SUMS ]] || die "缺少离线包校验清单"
+(cd "$INSTDIR/.." && sha256sum --quiet -c SHA256SUMS) || die "离线包校验失败"
+for tool in pacstrap arch-chroot genfstab sgdisk partprobe mkfs.btrfs mkfs.fat; do
+    command -v "$tool" >/dev/null || die "Live 环境缺少命令: $tool"
+done
+[[ -z $(findmnt -rn -o TARGET | awk '$0=="/mnt" || index($0,"/mnt/")==1') ]] || die "/mnt 已有挂载，请先卸载"
+# Use a temporary config: bundle paths may contain spaces and need no /opt setup.
+RUN_CONF=$(mktemp /run/cachyos-offline-pacman.XXXXXX)
+trap 'rm -f "$RUN_CONF"' EXIT
+{
+    printf '[options]\nArchitecture = auto\nSigLevel = Required DatabaseOptional\n'
+    printf 'CacheDir = %s/\nDisableSandbox\nParallelDownloads = 1\n' "$REPO"
+    printf '\n[offline]\nServer = file://%s/\n' "$REPO"
+} > "$RUN_CONF"
 
 echo "=============================================="
 echo " CachyOS 离线安装器 (ISO: $(cat /etc/version-tag 2>/dev/null || echo unknown))"
@@ -32,9 +50,11 @@ fi
 
 if [[ -d /sys/firmware/efi ]]; then
     echo "==> Live 启动模式: UEFI"
+    FIRMWARE=uefi
     EFI_NVRAM_FLAG=""
 else
     echo "==> Live 启动模式: BIOS（仍会安装 UEFI 引导，使用可移动设备回退路径）"
+    FIRMWARE=bios
     EFI_NVRAM_FLAG="--no-nvram"
 fi
 
@@ -110,15 +130,21 @@ else
     ((${#parts[@]})) || die "$DISK 没有分区；共存模式需要已有分区表（含 Windows 与预留的 Linux 分区）"
 
     ESP_NAME=""
+    ESP_COUNT=0
+    BIOS_BOOT=no
+    TABLE=$(lsblk -dno PTTYPE "$DISK" | tr -d '[:space:]')
     for p in "${parts[@]}"; do
-        pt=$(lsblk -no PARTTYPE "/dev/$p" | tr -d '[:space:]')
-        [[ $pt == c12a7328-f81f-11d2-ba4b-00a0c93ec93b ]] && { ESP_NAME=$p; break; }
+        pt=$(lsblk -no PARTTYPE "/dev/$p" | tr '[:upper:]' '[:lower:]' | tr -d '[:space:]')
+        [[ $pt != 21686148-6449-6e6f-744e-656564454649 ]] || BIOS_BOOT=yes
+        if [[ $pt == c12a7328-f81f-11d2-ba4b-00a0c93ec93b || $pt == 0xef ]]; then
+            ESP_COUNT=$((ESP_COUNT + 1))
+            ESP_NAME=$p
+        fi
     done
-    if [[ -z $ESP_NAME ]]; then
-        for p in "${parts[@]}"; do
-            fs=$(lsblk -no FSTYPE "/dev/$p" | tr -d '[:space:]')
-            [[ $fs == vfat ]] && { ESP_NAME=$p; break; }
-        done
+    validate_coexistence_boot "$FIRMWARE" "$TABLE" "$BIOS_BOOT" "$ESP_COUNT" || die "引导模式与分区布局不兼容"
+    if [[ $FIRMWARE == uefi ]]; then
+        [[ $(lsblk -no FSTYPE "/dev/$ESP_NAME" | tr -d '[:space:]') == vfat ]] || die "ESP 必须为 FAT 文件系统"
+        [[ -z $(lsblk -no MOUNTPOINTS "/dev/$ESP_NAME" | tr -d '[:space:]') ]] || die "ESP 已挂载，请先卸载"
     fi
 
     for i in "${!parts[@]}"; do
@@ -139,10 +165,8 @@ else
         die "$ROOT 已挂载，请先卸载"
     fi
 
-    if [[ -n $ESP_NAME ]]; then
+    if [[ $FIRMWARE == uefi ]]; then
         EFI="/dev/$ESP_NAME"
-    elif [[ -d /sys/firmware/efi ]]; then
-        die "UEFI 共存需要已有 EFI 分区（通常为 Windows 的 ESP）；未找到"
     fi
 
     echo
@@ -182,7 +206,7 @@ fi
 
 echo "==> pacstrap 安装系统（离线仓库，约 680 个包）"
 mapfile -t PKGS < <(grep -vE '^[[:space:]]*(#|$)' "$INSTDIR/packages.txt")
-pacstrap -c -C "$INSTDIR/pacman-offline.conf" "$MNT" "${PKGS[@]}"
+pacstrap -c -C "$RUN_CONF" "$MNT" "${PKGS[@]}"
 
 genfstab -U "$MNT" >> "$MNT/etc/fstab"
 
@@ -200,7 +224,7 @@ if [[ $MODE == 1 ]]; then
     GRUB_FALLBACK_CMD="mkdir -p /boot/efi/EFI/BOOT && cp /boot/efi/EFI/CachyOS/grubx64.efi /boot/efi/EFI/BOOT/BOOTX64.EFI"
 else
     OS_PROBER="false"
-    if [[ -n $EFI ]]; then
+    if [[ $FIRMWARE == uefi ]]; then
         GRUB_EFI_CMD="grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=CachyOS $EFI_NVRAM_FLAG --recheck"
     else
         GRUB_BIOS_CMD="grub-install --target=i386-pc --recheck $DISK"
@@ -238,35 +262,13 @@ until arch-chroot "$MNT" passwd "$USERNAME"; do echo "密码设置失败，请�
 echo "==> 复制离线仓库到目标系统（供日后离线装包）"
 mkdir -p "$MNT/opt"
 cp -a "$REPO" "$MNT/opt/offline-repo"
-cat > "$MNT/etc/pacman.conf" <<'PACMAN_EOF'
-[options]
-HoldPkg = pacman glibc
-Architecture = auto
-SigLevel = Required DatabaseOptional
-LocalFileSigLevel = Optional
-ParallelDownloads = 5
-Color
-VerbosePkgLists
-
-# 离线仓库（随 ISO 附带，始终可用）
-[offline]
-Server = file:///opt/offline-repo/
-
-# 联网后取消注释以下仓库即可在线更新
-# （建议先运行 sudo cachyos-rate-mirrors 选择镜像）
-#[cachyos-v3]
-#Include = /etc/pacman.d/cachyos-v3-mirrorlist
-#[cachyos-extra-v3]
-#Include = /etc/pacman.d/cachyos-v3-mirrorlist
-#[cachyos-core-v3]
-#Include = /etc/pacman.d/cachyos-v3-mirrorlist
-#[cachyos]
-#Include = /etc/pacman.d/cachyos-mirrorlist
-#[core]
-#Include = /etc/pacman.d/mirrorlist
-#[extra]
-#Include = /etc/pacman.d/mirrorlist
-PACMAN_EOF
+ASSETS="$MNT/usr/local/share/cachyos-offline"
+mkdir -p "$ASSETS" "$MNT/usr/local/sbin"
+install -m644 "$INSTDIR/pacman-installed-offline.conf" "$ASSETS/pacman-offline.conf"
+install -m644 "$INSTDIR/pacman-installed-online.conf" "$ASSETS/pacman-online.conf"
+install -m644 "$INSTDIR/target-versions.txt" "$ASSETS/target-versions.txt"
+install -m755 "$INSTDIR/repo-mode.sh" "$MNT/usr/local/sbin/cachyos-repo-mode"
+install -m644 "$ASSETS/pacman-offline.conf" "$MNT/etc/pacman.conf"
 
 cp "$LOG" "$MNT/var/log/offline-install.log"
 
@@ -279,7 +281,8 @@ echo "=============================================="
 echo " 安装完成！"
 echo " 模式: $([[ $MODE == 1 ]] && echo 整盘自动 || echo 与已有系统共存)"
 echo " 磁盘: $DISK  root: $ROOT  主机名: $HOSTNAME  用户: $USERNAME"
-echo " 引导: GRUB（模式1: BIOS+UEFI 双模式；模式2: 随固件，含 Windows 启动项）"
+echo " 引导: GRUB（模式1: BIOS+UEFI 双模式；模式2: 随固件，启用已有系统探测，结果取决于实际系统）"
+echo " 联网后运行 sudo cachyos-repo-mode online（切换仓库并完整升级）"
 echo " 重启后请拔掉 U 盘/安装介质"
 echo "=============================================="
 read -rp "是否立即重启？[y/N] " ans

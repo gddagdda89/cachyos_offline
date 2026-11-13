@@ -1,5 +1,5 @@
 # 大体积可再生产物（由 scripts/ 重新生成）
-/repo/
+/repo
 /db/
 /pkg-cache/
 /output/
@@ -13,3 +13,9 @@ vm/*.fd
 __pycache__/
 logs/db-offline-test/
 logs/.build-start
+
+# Immutable release materials (archive separately; metadata is tracked in releases/)
+/snapshots/
+/work/
+/repo.legacy-*/
+/.repo-link
