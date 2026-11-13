@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=CachyOS Offline Installer
+Name[zh_CN]=CachyOS 离线安装器
+GenericName=Offline System Installer
+Comment=Install CachyOS to disk without network access
+Comment[zh_CN]=无需网络，将 CachyOS 安装到磁盘
+Exec=konsole --hold -e sudo /opt/offline-install/offline-install.sh
+Icon=system-software-install
+Terminal=false
+Categories=System;
+StartupNotify=true

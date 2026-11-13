@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/bin/cachyos-hello
+
+[Action]
+Description = Offline ISO: disable CachyOS Hello autostart (online installer entry misleads offline users)
+When = PostTransaction
+Exec = /usr/bin/rm -f /etc/skel/.config/autostart/cachyos-hello.desktop

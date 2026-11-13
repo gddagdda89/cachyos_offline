@@ -1,0 +1,80 @@
+# 离线安装目标系统包清单（每行一个包，# 为注释）
+# 目标硬件：E5-2666 v3 (x86-64-v3) + GT 1030 (Nouveau) + X99 主板
+# 依赖由 pacman 自动解析；v3 优化包由 pacman-v3.conf 的仓库顺序保证
+
+# --- 基础系统 ---
+base
+sudo
+nano
+bash-completion
+man-db
+linux-cachyos
+intel-ucode
+mkinitcpio
+cachyos-keyring
+archlinux-keyring
+cachyos-mirrorlist
+cachyos-v3-mirrorlist
+cachyos-settings
+cachyos-hooks
+
+# --- 固件（按需裁剪：GT1030 需 nvidia；X99 板载网卡/音频多为 realtek）---
+# 不含 linux-firmware-intel（137MiB，主为 i915/Intel WiFi 固件，目标机不需要）
+linux-firmware-whence
+linux-firmware-nvidia
+linux-firmware-realtek
+linux-firmware-other
+
+# --- 文件系统与引导 ---
+btrfs-progs
+dosfstools
+e2fsprogs
+grub
+efibootmgr
+os-prober
+ntfs-3g
+
+# --- 网络 ---
+networkmanager
+wpa_supplicant
+
+# --- KDE Plasma ---
+plasma-desktop
+plasma-workspace
+plasma-integration
+plasma-nm
+plasma-pa
+kscreen
+powerdevil
+polkit-kde-agent
+xdg-desktop-portal-kde
+kde-gtk-config
+breeze-gtk
+sddm
+dolphin
+konsole
+kate
+ark
+gvfs
+xdg-user-dirs
+kwallet-pam
+
+# --- 音频 ---
+pipewire
+pipewire-alsa
+pipewire-pulse
+pipewire-jack
+wireplumber
+
+# --- 字体与中文输入 ---
+noto-fonts
+noto-fonts-cjk
+ttf-dejavu
+fcitx5
+fcitx5-chinese-addons
+fcitx5-gtk
+fcitx5-qt
+fcitx5-configtool
+
+# --- 常用应用 ---
+firefox

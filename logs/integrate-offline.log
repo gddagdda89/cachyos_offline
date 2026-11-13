@@ -1,0 +1,7 @@
+==> 集成离线仓库到 airootfs/opt/offline-repo
+==> 安装离线安装器到 airootfs/opt/offline-install
+==> 桌面快捷方式与应用菜单入口
+==> 构建期 hook：移除 Hello 自启动（其在线安装按钮断网时误导用户）
+==> 更新 profiledef.sh 文件权限
+==> 构建缓存指向项目内 pkg-cache（产物不落主机目录）
+==> 集成完成：684 个包，1.5G

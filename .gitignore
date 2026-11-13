@@ -1,0 +1,15 @@
+# 大体积可再生产物（由 scripts/ 重新生成）
+/repo/
+/db/
+/pkg-cache/
+/output/
+/CachyOS-Live-ISO/
+
+# VM 测试磁盘与 UEFI 变量（截图保留作测试证据）
+vm/*.qcow2
+vm/*.fd
+
+# 缓存与临时文件
+__pycache__/
+logs/db-offline-test/
+logs/.build-start

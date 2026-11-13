@@ -1,0 +1,821 @@
+==> 同步仓库数据库（独立 dbpath: /home/robola/dev/cachyos_iso/db）
+:: 正在同步软件包数据库...
+cachyos-v3正在下载……
+cachyos-extra-v3正在下载……
+cachyos-core-v3正在下载……
+cachyos正在下载……
+core正在下载……
+extra正在下载……
+==> 解析依赖，生成版本清单 logs/manifest.txt
+    解析出 684 个包（含依赖）
+==> 下载包与签名到 /home/robola/dev/cachyos_iso/repo
+正在解析依赖关系...
+:: 有 2 个软件包可提供 libncursesw.so=6-64 ：
+:: 软件仓库 cachyos-core-v3
+   1) ncurses
+:: 软件仓库 core
+   2) ncurses
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 libverto-module-base ：
+:: 软件仓库 cachyos-core-v3
+   1) libverto
+:: 软件仓库 core
+   2) libverto
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 libcrypt.so=2-64 ：
+:: 软件仓库 cachyos-core-v3
+   1) libxcrypt
+:: 软件仓库 core
+   2) libxcrypt
+
+输入某个数字 ( 默认=1 ): 
+:: 有 4 个软件包可提供 libxtables.so=12-64 ：
+:: 软件仓库 cachyos-core-v3
+   1) iptables  2) iptables-legacy
+:: 软件仓库 core
+   3) iptables  4) iptables-legacy
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 libfmt.so=12-64 ：
+:: 软件仓库 cachyos-extra-v3
+   1) fmt
+:: 软件仓库 extra
+   2) fmt
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 libspdlog.so=1.17-64 ：
+:: 软件仓库 cachyos-extra-v3
+   1) spdlog
+:: 软件仓库 extra
+   2) spdlog
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 libpolkit-gobject-1.so=0-64 ：
+:: 软件仓库 cachyos-extra-v3
+   1) polkit
+:: 软件仓库 extra
+   2) polkit
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 libgl ：
+:: 软件仓库 cachyos-extra-v3
+   1) libglvnd
+:: 软件仓库 extra
+   2) libglvnd
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 onevpl ：
+:: 软件仓库 cachyos-extra-v3
+   1) libvpl
+:: 软件仓库 extra
+   2) libvpl
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 sdl2 ：
+:: 软件仓库 cachyos-extra-v3
+   1) sdl2-compat
+:: 软件仓库 extra
+   2) sdl2-compat
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 libzimg.so=2-64 ：
+:: 软件仓库 cachyos-extra-v3
+   1) zimg
+:: 软件仓库 extra
+   2) zimg
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 liblsmash.so=2-64 ：
+:: 软件仓库 cachyos-extra-v3
+   1) l-smash
+:: 软件仓库 extra
+   2) l-smash
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 libltdl ：
+:: 软件仓库 cachyos-v3
+   1) libtool
+:: 软件仓库 core
+   2) libtool
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 emoji-font ：
+:: 软件仓库 extra
+   1) noto-fonts-emoji  2) noto-fonts-emoji-3d
+
+输入某个数字 ( 默认=1 ): 
+:: 有 4 个软件包可提供 qt6-multimedia-backend ：
+:: 软件仓库 cachyos-extra-v3
+   1) qt6-multimedia-ffmpeg  2) qt6-multimedia-gstreamer
+:: 软件仓库 extra
+   3) qt6-multimedia-ffmpeg  4) qt6-multimedia-gstreamer
+
+输入某个数字 ( 默认=1 ): 
+:: 有 2 个软件包可提供 libtevent.so=0-64 ：
+:: 软件仓库 cachyos-extra-v3
+   1) tevent
+:: 软件仓库 extra
+   2) tevent
+
+输入某个数字 ( 默认=1 ): 
+
+软件包 (684)                                 新版本                      净变化      下载大小 
+
+cachyos-extra-v3/abseil-cpp                  20260817.0-2.1                7.17 MiB           
+cachyos-extra-v3/accountsservice             26.27.3-1.1                   0.98 MiB           
+cachyos-core-v3/acl                          2.4.0-1.1                     0.35 MiB           
+extra/adwaita-cursors                        51.0-1                       11.41 MiB           
+extra/adwaita-fonts                          51.0-2                        7.27 MiB           
+extra/adwaita-icon-theme                     51.0-1                        0.92 MiB           
+extra/adwaita-icon-theme-legacy              46.2-3                        2.23 MiB           
+extra/alsa-card-profiles                     1:1.6.11-1                    0.19 MiB           
+cachyos-extra-v3/alsa-lib                    1.2.16.1-1.1                  1.93 MiB           
+extra/alsa-topology-conf                     1.2.5.1-4                     0.33 MiB           
+extra/alsa-ucm-conf                          1.2.16.1-1                    0.68 MiB           
+cachyos-extra-v3/ananicy-cpp                 1.2.0-1.1                     0.59 MiB           
+cachyos-extra-v3/aom                         3.15.3-1.1                    9.05 MiB           
+cachyos-extra-v3/appstream                   1.2.3-1.1                    18.52 MiB           
+cachyos-extra-v3/appstream-qt                1.2.3-1.1                     0.77 MiB           
+cachyos-extra-v3/at-spi2-core                2.62.1-1.1                    4.11 MiB           
+cachyos-extra-v3/attica                      6.31.0-1.1                    0.89 MiB           
+cachyos-core-v3/attr                         2.6.0-1.1                     0.23 MiB           
+cachyos-core-v3/audit                        4.2.1-1.1                     1.07 MiB           
+cachyos-extra-v3/aurorae                     6.8.2-1.1                     0.69 MiB           
+cachyos-extra-v3/avahi                       1:0.9rc5-2.1                  1.91 MiB           
+cachyos-extra-v3/baloo                       6.31.0-2.1                    2.76 MiB           
+cachyos-extra-v3/baloo-widgets               26.08.3-1.1                   0.52 MiB           
+cachyos-v3/bash                              5.3.20-2                      9.68 MiB           
+cachyos-v3/binutils                          2.47-2                       45.06 MiB           
+cachyos-extra-v3/bluez-libs                  5.88-1.1                      0.32 MiB           
+cachyos-extra-v3/boost-libs                  1.92.0-2.1                   51.61 MiB           
+cachyos-extra-v3/breeze                      6.8.2-1.1                    38.85 MiB           
+cachyos-extra-v3/breeze-cursors              6.8.2-1.1                    29.25 MiB           
+cachyos-extra-v3/breeze-icons                6.31.0-1.1                   57.33 MiB           
+cachyos-core-v3/brotli                       1.2.1-1.1                     1.22 MiB           
+cachyos-extra-v3/bubblewrap                  0.13.1-1.1                    0.10 MiB           
+cachyos-core-v3/bzip2                        1.0.8-6.1                     0.14 MiB           
+core/ca-certificates                         20240618-1                    0.00 MiB           
+cachyos-core-v3/ca-certificates-mozilla      3.133-1.1                     1.01 MiB           
+core/ca-certificates-utils                   20240618-1                    0.01 MiB           
+cachyos/cachyos-ananicy-rules                1:1.1.49-1                    1.91 MiB           
+cachyos-extra-v3/cairo                       1.18.6-1.1                    2.23 MiB           
+cachyos-extra-v3/cfitsio                     1:4.7.0-1.1                   2.65 MiB           
+cachyos-extra-v3/cifs-utils                  7.9-1.1                       0.30 MiB           
+cachyos-extra-v3/convertlit                  1.8-13.1                      0.12 MiB           
+cachyos-core-v3/coreutils                    9.12-3.1                     19.21 MiB           
+cachyos-core-v3/cryptsetup                   2.8.8-2.1                     3.78 MiB           
+cachyos-core-v3/curl                         8.23.0-2.1                    2.56 MiB           
+cachyos-extra-v3/cxx-rust-cssparser          1.1.0-1.1                     2.07 MiB           
+cachyos-extra-v3/dav1d                       1.5.4-1.1                     2.18 MiB           
+cachyos-core-v3/db5.3                        5.3.28-7.1                    6.83 MiB           
+cachyos-core-v3/dbus                         1.16.4-1.1                    1.01 MiB   0.35 MiB
+cachyos-core-v3/dbus-broker                  37-3.1                        0.41 MiB           
+cachyos-core-v3/dbus-broker-units            37-3.1                        0.00 MiB           
+cachyos-core-v3/dbus-units                   37-3.1                        0.00 MiB           
+cachyos-extra-v3/dconf                       51.0-1.1                      0.47 MiB           
+extra/ddcutil                                3.0.2-1                       2.65 MiB           
+extra/default-cursors                        3-1                           0.00 MiB           
+cachyos-extra-v3/desktop-file-utils          0.29-1.1                      0.20 MiB           
+cachyos-core-v3/device-mapper                2.03.44-1.1                   0.91 MiB           
+cachyos-core-v3/diffutils                    3.12-2.1                      1.51 MiB           
+cachyos-extra-v3/double-conversion           3.4.0-1.1                     0.20 MiB           
+cachyos-extra-v3/duktape                     2.7.0-7.1                     0.78 MiB           
+cachyos-extra-v3/ebook-tools                 0.2.2-9.1                     0.08 MiB           
+cachyos-extra-v3/editorconfig-core-c         0.12.11-1.1                   0.11 MiB           
+cachyos-core-v3/efivar                       39-2.1                        0.56 MiB           
+cachyos-extra-v3/enchant                     2.8.21-1.1                    0.33 MiB           
+cachyos-extra-v3/exiv2                       0.28.9-1.1                   15.68 MiB           
+cachyos-core-v3/expat                        2.10.0-1.1                    0.57 MiB           
+extra/ffmpeg                                 2:9.0.2-3                    48.45 MiB           
+cachyos-extra-v3/fftw                        3.3.11-1.1                    8.68 MiB           
+cachyos-core-v3/file                         5.48-1.1                     10.55 MiB           
+core/filesystem                              2025.10.12-1                  0.02 MiB           
+cachyos-core-v3/findutils                    4.11.0-1.1                    1.95 MiB           
+cachyos-extra-v3/flac                        1.5.0-1.2                     1.32 MiB           
+cachyos-extra-v3/fmt                         12.2.0-1.1                    0.75 MiB           
+cachyos-extra-v3/fontconfig                  2:2.18.3-2.1                  1.38 MiB           
+cachyos-extra-v3/frameworkintegration        6.31.0-1.1                    0.26 MiB           
+cachyos-extra-v3/freetype2                   2.15.0-1.1                    2.04 MiB           
+cachyos-extra-v3/fribidi                     1.0.18-1.1                    0.27 MiB           
+cachyos-extra-v3/fuse-common                 3.18.3-1.1                    0.00 MiB           
+extra/fuse2                                  2.9.9-6                       0.45 MiB           
+cachyos-extra-v3/fuse3                       3.18.3-1.1                    0.60 MiB           
+cachyos-core-v3/gawk                         5.4.1-1.1                     4.24 MiB           
+cachyos-v3/gcc-libs                          16.2.1+r23+gd564253eb6c8-3    0.00 MiB           
+cachyos-extra-v3/gcr-4                       4.4.1-1.1                     3.11 MiB           
+cachyos-core-v3/gdbm                         1.26-2.1                      0.74 MiB           
+cachyos-extra-v3/gdk-pixbuf2                 2.44.8-1.1                    3.09 MiB           
+cachyos-core-v3/gettext                      1.0-2.1                      21.15 MiB           
+cachyos-extra-v3/giflib                      6.1.3-2.1                     0.33 MiB           
+cachyos-extra-v3/glib-networking             1:2.90.1-1.1                  0.72 MiB           
+cachyos-core-v3/glib2                        2.90.1-1.1                   39.29 MiB           
+cachyos-v3/glibc                             2.44+r50+g1848099f063e-3     51.03 MiB           
+cachyos-extra-v3/glslang                     1:1.4.363.0-1.1              14.49 MiB           
+cachyos-extra-v3/glycin                      2.2.6-1.1                    19.58 MiB           
+cachyos-core-v3/gmp                          6.3.0-3.1                     1.14 MiB           
+core/gnulib-l10n                             20241231-1                    0.61 MiB           
+cachyos-core-v3/gnupg                        2.4.9-4.1                    11.16 MiB           
+cachyos-core-v3/gnutls                       3.8.13-3.1                    8.46 MiB           
+cachyos-extra-v3/gperftools                  2.19.3-1.1                    2.47 MiB           
+cachyos-core-v3/gpgme                        2.2.0-1.1                     0.84 MiB           
+cachyos-extra-v3/gpgmepp                     2.2.0-1.1                     0.60 MiB           
+cachyos-core-v3/gpm                          1.20.7.r38.ge82d1a6-7.1       0.40 MiB           
+cachyos-extra-v3/graphene                    1.10.8-2.1                    0.99 MiB           
+extra/graphite                               1:1.3.15-1                    0.20 MiB           
+cachyos-core-v3/grep                         3.12-2.1                      0.90 MiB           
+cachyos-core-v3/groff                        1.24.2-1.1                    9.45 MiB           
+extra/gsettings-desktop-schemas              51.0-1                        6.65 MiB           
+extra/gsettings-system-schemas               51.0-1                        0.02 MiB           
+cachyos-extra-v3/gsm                         1.0.24-1.1                    0.13 MiB           
+cachyos-extra-v3/gst-plugins-base-libs       1.28.9-1.1                   13.87 MiB           
+cachyos-extra-v3/gstreamer                   1.28.9-1.1                   12.07 MiB           
+cachyos-extra-v3/gtest                       1.18.0-1.1                    1.74 MiB           
+cachyos-extra-v3/gtk-update-icon-cache       1:4.24.1-1.1                  0.04 MiB           
+cachyos-extra-v3/gtk3                        1:3.24.52-2.1                53.90 MiB           
+cachyos-extra-v3/gumbo-parser                0.14.1-1.1                    0.36 MiB           
+cachyos-core-v3/gzip                         1.15-1.1                      0.19 MiB           
+cachyos-extra-v3/harfbuzz                    15.1.0-1.1                    5.99 MiB           
+cachyos-extra-v3/hdf5                        2.2.0-1.1                    15.26 MiB           
+extra/hicolor-icon-theme                     0.18-1                        0.05 MiB           
+cachyos-extra-v3/hidapi                      0.15.0-1.1                    0.13 MiB           
+cachyos-extra-v3/highway                     1.4.0-1.1                     9.70 MiB           
+cachyos-extra-v3/hunspell                    1.7.6-1.1                     1.54 MiB           
+core/hwdata                                  0.412-1                      10.08 MiB           
+cachyos-extra-v3/hwloc                       2.15.0-1.1                    1.88 MiB           
+cachyos-extra-v3/i2c-tools                   4.4-4.1                       0.33 MiB           
+core/iana-etc                                20260617-1                    4.02 MiB           
+cachyos-core-v3/icu                          78.3-1.1                     43.80 MiB           
+cachyos-extra-v3/iio-sensor-proxy            3.9-1.1                       0.12 MiB           
+cachyos-extra-v3/imath                       3.2.3-1.1                    27.50 MiB           
+extra/inxi                                   3.3.41.1-2                    1.36 MiB           
+cachyos-core-v3/iproute2                     7.3.0-1.1                     3.49 MiB           
+cachyos-core-v3/iptables                     1:1.8.13-1.1                  2.47 MiB           
+cachyos-core-v3/iputils                      20250605-1.1                  0.65 MiB           
+extra/iso-codes                              4.20.1-1                     22.30 MiB           
+cachyos-core-v3/iw                           6.17-1.1                      0.29 MiB           
+cachyos-core-v3/jansson                      2.15.1-1.1                    0.32 MiB           
+cachyos-extra-v3/jbigkit                     2.2-1.1                       0.18 MiB           
+cachyos-core-v3/json-c                       0.19-1.1                      0.20 MiB           
+cachyos-extra-v3/json-glib                   1.10.8-1.1                    1.03 MiB           
+cachyos-extra-v3/kactivitymanagerd           6.8.2-1.1                     0.83 MiB           
+cachyos-extra-v3/karchive                    6.31.0-2.1                    0.89 MiB           
+cachyos-extra-v3/kauth                       6.31.0-1.1                    0.44 MiB           
+cachyos-core-v3/kbd                          2.10.0-1.1                    3.31 MiB           
+cachyos-extra-v3/kbookmarks                  6.31.0-1.1                    0.53 MiB           
+cachyos-extra-v3/kcmutils                    6.31.0-1.1                    1.42 MiB           
+cachyos-extra-v3/kcodecs                     6.31.0-1.1                    0.72 MiB           
+cachyos-extra-v3/kcolorscheme                6.31.0-1.1                    0.17 MiB           
+cachyos-extra-v3/kcompletion                 6.31.0-1.1                    0.43 MiB           
+cachyos-extra-v3/kconfig                     6.31.0-1.1                    2.50 MiB           
+cachyos-extra-v3/kconfigwidgets              6.31.0-1.1                    1.39 MiB           
+cachyos-extra-v3/kcoreaddons                 6.31.0-1.1                    3.33 MiB           
+cachyos-extra-v3/kcrash                      6.31.0-1.1                    0.08 MiB           
+cachyos-extra-v3/kdbusaddons                 6.31.0-1.1                    0.24 MiB           
+cachyos-extra-v3/kde-cli-tools               6.8.2-1.1                     3.67 MiB           
+cachyos-extra-v3/kdeclarative                6.31.0-1.1                    0.88 MiB           
+cachyos-extra-v3/kdecoration                 6.8.2-1.1                     0.40 MiB           
+cachyos-extra-v3/kded                        6.31.0-1.1                    0.16 MiB           
+cachyos-extra-v3/kdesu                       6.31.0-1.1                    0.24 MiB           
+cachyos-extra-v3/kdnssd                      6.31.0-1.1                    0.30 MiB           
+extra/kdsoap                                 2.3.0-1                       1.34 MiB           
+cachyos-extra-v3/kdsoap-ws-discovery-client  0.4.0-3.1                     0.74 MiB           
+cachyos-core-v3/keyutils                     1.6.3-4.1                     0.20 MiB           
+cachyos-extra-v3/kfilemetadata               6.31.0-1.1                    1.45 MiB           
+cachyos-extra-v3/kglobalaccel                6.31.0-1.1                    0.32 MiB           
+cachyos-extra-v3/kglobalacceld               6.8.2-1.1                     0.37 MiB           
+cachyos-extra-v3/kguiaddons                  6.31.0-1.1                    0.85 MiB           
+cachyos-extra-v3/kholidays                   1:6.31.0-1.1                  1.14 MiB           
+cachyos-extra-v3/ki18n                       6.31.0-1.1                   18.01 MiB           
+cachyos-extra-v3/kiconthemes                 6.31.0-1.1                    0.63 MiB           
+cachyos-extra-v3/kidletime                   6.31.0-1.1                    0.27 MiB           
+cachyos-extra-v3/kimageformats               6.31.0-1.1                    3.57 MiB           
+cachyos-extra-v3/kio                         6.31.0-1.1                   20.37 MiB           
+cachyos-extra-v3/kio-extras                  26.08.3-1.1                   7.57 MiB           
+cachyos-extra-v3/kio-fuse                    5.1.1-2.1                     0.20 MiB           
+extra/kirigami                               6.31.0-1                      7.08 MiB           
+cachyos-extra-v3/kirigami-addons             1.16.1-1.1                    9.85 MiB           
+cachyos-extra-v3/kitemmodels                 6.31.0-1.1                    0.61 MiB           
+cachyos-extra-v3/kitemviews                  6.31.0-1.1                    0.44 MiB           
+cachyos-extra-v3/kjobwidgets                 6.31.0-1.1                    0.78 MiB           
+cachyos-extra-v3/kmenuedit                   6.8.2-1.1                     1.96 MiB           
+core/kmod                                    34.3-2                        0.34 MiB           
+cachyos-extra-v3/knewstuff                   6.31.0-1.1                    3.28 MiB           
+cachyos-extra-v3/knighttime                  6.8.2-1.1                     0.21 MiB           
+cachyos-extra-v3/knotifications              6.31.0-1.1                    0.53 MiB           
+cachyos-extra-v3/knotifyconfig               6.31.0-1.1                    0.20 MiB           
+cachyos-extra-v3/kpackage                    6.31.0-1.1                    0.71 MiB           
+cachyos-extra-v3/kparts                      6.31.0-1.1                    0.50 MiB           
+cachyos-extra-v3/kpipewire                   6.8.2-1.1                     0.65 MiB           
+cachyos-extra-v3/kpty                        6.31.0-1.1                    0.16 MiB           
+cachyos-extra-v3/kquickcharts                6.31.0-1.1                    0.78 MiB           
+cachyos-core-v3/krb5                         1.22.2-2.1                    5.14 MiB           
+cachyos-extra-v3/krunner                     6.31.0-1.1                    0.53 MiB           
+cachyos-extra-v3/kscreenlocker               6.8.2-1.1                     1.19 MiB           
+cachyos-extra-v3/kservice                    6.31.0-1.1                    0.77 MiB           
+cachyos-extra-v3/kstatusnotifieritem         6.31.0-1.1                    0.50 MiB           
+cachyos-extra-v3/ksvg                        6.31.0-1.1                    0.59 MiB           
+cachyos-extra-v3/ksystemstats                6.8.2-1.1                     1.97 MiB           
+cachyos-extra-v3/ktexteditor                 6.31.0-1.1                   14.64 MiB           
+cachyos-extra-v3/ktextwidgets                6.31.0-1.1                    1.43 MiB           
+cachyos-extra-v3/kunitconversion             6.31.0-1.1                   11.86 MiB           
+cachyos-extra-v3/kuserfeedback               6.31.0-1.1                    2.08 MiB           
+cachyos-extra-v3/kwallet                     6.31.0-1.1                    2.57 MiB           
+cachyos-extra-v3/kwayland                    6.8.2-1.1                     1.24 MiB           
+cachyos-extra-v3/kwidgetsaddons              6.31.0-1.1                    7.77 MiB           
+cachyos-extra-v3/kwin                        6.8.2-2.1                    33.35 MiB           
+cachyos-extra-v3/kwindowsystem               6.31.0-1.1                    0.91 MiB           
+cachyos-extra-v3/kxmlgui                     6.31.0-1.1                    3.95 MiB           
+cachyos-extra-v3/l-smash                     2.14.5-4.1                    1.17 MiB           
+cachyos-extra-v3/lame                        4.0-1.1                       1.39 MiB           
+cachyos-extra-v3/layer-shell-qt              6.8.2-1.1                     0.15 MiB           
+cachyos-extra-v3/lcms2                       2.20-1.1                      0.86 MiB           
+cachyos-extra-v3/ldb                         2:4.25.1-1.1                  2.24 MiB           
+cachyos-core-v3/leancrypto                   1.9.1-1.1                     9.20 MiB           
+cachyos-core-v3/less                         1:710-1.1                     0.42 MiB           
+cachyos-extra-v3/libaec                      1.1.7-1.1                     0.12 MiB           
+cachyos-core-v3/libarchive                   3.8.11-2.1                    1.57 MiB           
+cachyos-v3/libasan                           16.2.1+r23+gd564253eb6c8-3    2.18 MiB           
+cachyos-extra-v3/libass                      0.17.5-1.1                    0.36 MiB           
+cachyos-core-v3/libassuan                    3.0.0-1.1                     0.25 MiB           
+cachyos-extra-v3/libasyncns                  1:0.8+r3+g68cd5af-3.2         0.05 MiB           
+cachyos-extra-v3/libatasmart                 0.19-8.1                      0.10 MiB           
+cachyos-v3/libatomic                         16.2.1+r23+gd564253eb6c8-3    0.04 MiB           
+cachyos-extra-v3/libavc1394                  0.5.4-7.1                     0.12 MiB           
+cachyos-extra-v3/libb2                       0.98.1-3.1                    0.12 MiB           
+cachyos-extra-v3/libblake3                   1.8.7-1.1                     0.12 MiB           
+cachyos-extra-v3/libblockdev                 3.6.0-1.1                     3.71 MiB           
+cachyos-extra-v3/libblockdev-crypto          3.6.0-1.1                     0.08 MiB           
+cachyos-extra-v3/libblockdev-fs              3.6.0-1.1                     0.15 MiB           
+cachyos-extra-v3/libblockdev-loop            3.6.0-1.1                     0.02 MiB           
+cachyos-extra-v3/libblockdev-mdraid          3.6.0-1.1                     0.04 MiB           
+cachyos-extra-v3/libblockdev-nvme            3.6.0-1.1                     0.08 MiB           
+cachyos-extra-v3/libblockdev-part            3.6.0-1.1                     0.05 MiB           
+cachyos-extra-v3/libblockdev-smart           3.6.0-1.1                     0.12 MiB           
+cachyos-extra-v3/libblockdev-swap            3.6.0-1.1                     0.02 MiB           
+cachyos-extra-v3/libbluray                   1.5.1-1.1                     1.35 MiB           
+cachyos-core-v3/libbpf                       1.8.0-1.1                     0.95 MiB           
+cachyos-extra-v3/libbs2b                     3.1.0-11.1                    0.07 MiB           
+cachyos-extra-v3/libbsd                      0.12.2-2.1                    0.35 MiB           
+cachyos-extra-v3/libbytesize                 2.12-3.1                      0.09 MiB           
+cachyos-extra-v3/libcanberra                 1:0.30+r2+gc0620e4-6.1        0.38 MiB           
+cachyos-core-v3/libcap                       2.78-1.1                      2.08 MiB           
+cachyos-core-v3/libcap-ng                    0.9.6-1.1                     0.18 MiB           
+cachyos-extra-v3/libcdio                     2.4.0-1.1                     0.91 MiB           
+cachyos-extra-v3/libcdio-paranoia            10.2+2.0.2-3.1                0.20 MiB           
+cachyos-extra-v3/libcgif                     0.5.4-1.1                     0.03 MiB           
+cachyos-extra-v3/libcloudproviders           0.4.2-1.1                     0.32 MiB           
+extra/libcolord                              1.4.8-2                       1.24 MiB           
+extra/libcups                                2:2.4.20-1                    0.79 MiB           
+cachyos-extra-v3/libdaemon                   0.14-6.3                      0.06 MiB           
+cachyos-extra-v3/libdatrie                   0.2.14-1.1                    0.49 MiB           
+cachyos-extra-v3/libdecor                    0.2.5-1.1                     0.17 MiB           
+cachyos-extra-v3/libdeflate                  1.26-1.1                      0.17 MiB           
+cachyos-extra-v3/libdisplay-info             0.3.0-1.1                     0.39 MiB           
+cachyos-extra-v3/libdmtx                     0.7.8-1.1                     0.14 MiB           
+cachyos-extra-v3/libdovi                     3.4.0-1.1                     0.65 MiB           
+cachyos-extra-v3/libdrm                      2.4.134-1.1                   1.35 MiB           
+cachyos-extra-v3/libdvdnav                   7.0.0-1.1                     0.17 MiB           
+cachyos-extra-v3/libdvdread                  7.1.1-1.1                     0.43 MiB           
+cachyos-extra-v3/libebur128                  1.2.6-2.1                     0.05 MiB           
+cachyos-core-v3/libedit                      20260512_3.1-1.1              0.33 MiB           
+cachyos-extra-v3/libei                       1.6.0-2.1                     0.45 MiB           
+core/libelf                                  0.197-1                       3.33 MiB           
+cachyos-extra-v3/libepoxy                    1.5.10-3.1                    2.71 MiB           
+cachyos-extra-v3/libevdev                    1.14.0-1.1                    0.22 MiB           
+cachyos-core-v3/libevent                     2.1.13-3.1                    1.32 MiB           
+cachyos-extra-v3/libexif                     0.6.26-1.1                    3.14 MiB           
+cachyos-extra-v3/libfdk-aac                  3.0.0-1.1                     3.94 MiB           
+cachyos-core-v3/libffi                       3.8.0-1.1                     0.12 MiB           
+cachyos-extra-v3/libfontenc                  1.1.9-1.1                     0.04 MiB           
+cachyos-extra-v3/libfreeaptx                 0.2.2-1.1                     0.06 MiB           
+cachyos-extra-v3/libfyaml                    0.9.6-3.1                     1.23 MiB           
+cachyos-v3/libgcc                            16.2.1+r23+gd564253eb6c8-3    0.21 MiB           
+cachyos-core-v3/libgcrypt                    1.12.4-1.1                    2.52 MiB           
+cachyos-v3/libgfortran                       16.2.1+r23+gd564253eb6c8-3    8.08 MiB           
+cachyos-extra-v3/libglvnd                    1.7.0-3.1                     3.35 MiB           
+cachyos-v3/libgomp                           16.2.1+r23+gd564253eb6c8-3    0.51 MiB           
+cachyos-core-v3/libgpg-error                 1.61-1.1                      1.18 MiB           
+cachyos-extra-v3/libgudev                    238-4.1                       0.17 MiB           
+cachyos-v3/libhwasan                         16.2.1+r23+gd564253eb6c8-3    0.82 MiB           
+cachyos-extra-v3/libice                      1.1.2-1.1                     0.36 MiB           
+cachyos-core-v3/libidn2                      2.3.8-1.1                     0.37 MiB           
+cachyos-extra-v3/libiec61883                 1.2.0-9.1                     0.12 MiB           
+extra/libimagequant                          4.4.1-2                       0.60 MiB           
+cachyos-extra-v3/libime                      1.1.17-1.1                   54.43 MiB           
+cachyos-extra-v3/libimobiledevice            1.4.0-3.1                     6.28 MiB           
+cachyos-extra-v3/libimobiledevice-glue       1.3.2-1.1                     0.11 MiB           
+cachyos-core-v3/libinih                      62-2.1                        0.06 MiB           
+cachyos-extra-v3/libinput                    1.32.0-1.1                    0.85 MiB           
+extra/libjpeg-turbo                          3.2.1-1                       2.66 MiB           
+cachyos-extra-v3/libjxl                      0.12.0-1.1                    9.12 MiB           
+cachyos-extra-v3/libkexiv2                   26.08.3-1.1                   0.49 MiB           
+cachyos-core-v3/libksba                      1.8.1-1.1                     0.38 MiB           
+cachyos-extra-v3/libkscreen                  6.8.2-1.1                     0.80 MiB           
+extra/libksysguard                           6.8.2-1                       3.74 MiB           
+cachyos-extra-v3/liblc3                      1.1.3-2.1                     0.37 MiB           
+cachyos-extra-v3/libldac                     2.0.2.6-1.1                   0.12 MiB           
+core/libldap                                 2.7.2-3                       0.65 MiB           
+cachyos-v3/liblsan                           16.2.1+r23+gd564253eb6c8-3    0.64 MiB           
+core/libmakepkg-dropins                      20-2                          0.01 MiB           
+cachyos-extra-v3/libmatio                    1.5.30-1.1                    1.13 MiB           
+cachyos-extra-v3/libmbim                     1.34.0-2.1                    3.72 MiB           
+cachyos-extra-v3/libmd                       1.3.0-1.1                     0.14 MiB           
+cachyos-extra-v3/libmm-glib                  1.24.2-2.1                    7.45 MiB           
+cachyos-core-v3/libmnl                       1.0.5-2.1                     0.03 MiB           
+cachyos-extra-v3/libmodplug                  0.8.9.0-7.1                   0.44 MiB           
+cachyos-extra-v3/libmtp                      1.1.23-1.1                    5.50 MiB           
+cachyos-extra-v3/libmysofa                   1.3.5-1.1                     1.30 MiB           
+cachyos-extra-v3/libndp                      1.9-1.2                       0.06 MiB           
+cachyos-core-v3/libnetfilter_conntrack       1.1.1-1.1                     0.16 MiB           
+cachyos-extra-v3/libnewt                     0.52.25-2.1                   0.30 MiB           
+cachyos-core-v3/libnfnetlink                 1.0.2-2.1                     0.05 MiB           
+cachyos-core-v3/libnftnl                     1.3.2-1.1                     0.26 MiB           
+cachyos-core-v3/libnghttp2                   1.71.0-1.1                    0.41 MiB           
+cachyos-core-v3/libnghttp3                   1.19.0-1.1                    0.29 MiB           
+cachyos-core-v3/libngtcp2                    1.26.0-2.1                    0.83 MiB           
+cachyos-core-v3/libnl                        3.12.0-1.1                    2.16 MiB           
+extra/libnm                                  1.58.1-3                      6.41 MiB           
+cachyos-core-v3/libnsl                       2.0.1-2.1                     0.07 MiB           
+cachyos-extra-v3/libntfs-3g                  2026.9.28-1.1                 0.67 MiB           
+cachyos-extra-v3/libnvme                     1.16.2-3.1                    1.76 MiB           
+cachyos-v3/libobjc                           16.2.1+r23+gd564253eb6c8-3    0.11 MiB           
+cachyos-extra-v3/libogg                      1.3.6-1.1                     0.44 MiB           
+cachyos-extra-v3/libopenmpt                  0.8.10-1.1                    2.94 MiB           
+cachyos-core-v3/libp11-kit                   0.26.6-1.1                    4.39 MiB   0.71 MiB
+cachyos-core-v3/libpcap                      1.11.0-1.1                    0.77 MiB           
+cachyos-extra-v3/libpciaccess                0.19-1.1                      0.06 MiB           
+cachyos-extra-v3/libpgm                      5.3.128-4.1                   0.38 MiB           
+cachyos-core-v3/libpipeline                  1.5.8-1.1                     0.09 MiB           
+extra/libpipewire                            1:1.6.11-1                    5.78 MiB           
+cachyos-extra-v3/libplacebo                  7.360.1-7.1                   1.75 MiB           
+cachyos-extra-v3/libplasma                   6.8.2-1.1                     8.49 MiB           
+cachyos-extra-v3/libplist                    2.7.0-3.1                     0.57 MiB           
+cachyos-extra-v3/libpng                      1.6.59-1.1                    0.69 MiB           
+cachyos-extra-v3/libproxy                    0.5.12-1.1                    0.10 MiB           
+cachyos-core-v3/libpsl                       0.21.5-2.1                    0.22 MiB           
+cachyos-extra-v3/libpulse                    17.0+r134+g77d25a1e6-2.1      1.61 MiB           
+extra/libqaccessibilityclient-qt6            0.6.0-4                       0.32 MiB           
+cachyos-extra-v3/libqalculate                5.13.2-1.1                   16.64 MiB           
+cachyos-extra-v3/libqmi                      1.38.0-2.1                   21.77 MiB           
+cachyos-extra-v3/libqrtr-glib                1.4.0-2.1                     0.13 MiB           
+cachyos-v3/libquadmath                       16.2.1+r23+gd564253eb6c8-3    0.35 MiB           
+cachyos-extra-v3/libraw                      0.22.3-1.1                    3.50 MiB           
+cachyos-extra-v3/libraw1394                  2.1.2-4.1                     0.17 MiB           
+cachyos-extra-v3/librsvg                     2:2.63.4-1.1                  9.99 MiB           
+cachyos-extra-v3/libsamplerate               0.2.2-3.1                     1.55 MiB           
+cachyos-core-v3/libsasl                      2.1.28-6.1                    0.55 MiB           
+cachyos-core-v3/libseccomp                   2.6.0-1.1                     0.33 MiB           
+cachyos-core-v3/libsecret                    0.21.8.2-1.1                  1.11 MiB           
+cachyos-extra-v3/libsm                       1.2.6-1.2                     0.26 MiB           
+cachyos-extra-v3/libsndfile                  1.2.2-4.1                     1.15 MiB           
+cachyos-extra-v3/libsodium                   1.0.22-1.1                    0.79 MiB           
+cachyos-extra-v3/libsoup3                    3.8.1-1.1                     2.14 MiB           
+cachyos-extra-v3/libsoxr                     0.1.3-5.1                     0.32 MiB           
+cachyos-extra-v3/libssc                      0.4.4-1.1                     0.26 MiB           
+cachyos-extra-v3/libssh                      0.12.2-2.1                    0.83 MiB           
+cachyos-core-v3/libssh2                      1.11.1-8.1                    0.54 MiB           
+cachyos-v3/libstdc++                         16.2.1+r23+gd564253eb6c8-3    3.16 MiB           
+cachyos-extra-v3/libstemmer                  3.2.0-1.1                     0.50 MiB           
+cachyos-extra-v3/libsysprof-capture          51.0-1.1                      0.29 MiB           
+cachyos-core-v3/libtasn1                     4.21.0-1.1                    0.28 MiB           
+cachyos-extra-v3/libtatsu                    1.0.5-1.1                     0.05 MiB           
+cachyos-extra-v3/libteam                     1.32-3.1                      0.34 MiB           
+cachyos-extra-v3/libthai                     0.1.30-1.1                    1.25 MiB           
+cachyos-extra-v3/libtheora                   1.2.0-1.1                     2.44 MiB           
+cachyos-extra-v3/libtiff                     4.7.2-2.1                     1.62 MiB           
+cachyos-core-v3/libtirpc                     1.3.8-1.1                     0.44 MiB           
+cachyos-extra-v3/libtommath                  1.3.0-2.1                     0.13 MiB           
+cachyos-v3/libtool                           2.6.2-6                       2.35 MiB           
+cachyos-v3/libtsan                           16.2.1+r23+gd564253eb6c8-3    1.72 MiB           
+cachyos-v3/libubsan                          16.2.1+r23+gd564253eb6c8-3    0.57 MiB           
+cachyos-extra-v3/libunibreak                 7.0-1.1                       0.15 MiB           
+cachyos-core-v3/libunistring                 1.4.2-1.1                     2.80 MiB           
+cachyos-extra-v3/libunwind                   1.8.3-1.1                     0.33 MiB           
+cachyos-extra-v3/liburing                    2.15-1.1                      0.47 MiB           
+cachyos-core-v3/libusb                       1.0.30-1.1                    0.24 MiB           
+cachyos-extra-v3/libusbmuxd                  2.1.1-2.1                     0.08 MiB           
+cachyos-extra-v3/libutempter                 1.2.3-1.1                     0.03 MiB           
+cachyos-extra-v3/libva                       2.24.1-1.1                    1.00 MiB           
+cachyos-extra-v3/libvdpau                    1.5-4.1                       0.28 MiB           
+cachyos-core-v3/libverto                     0.3.2-6.1                     0.07 MiB           
+extra/libvips                                8.18.7-1                      6.03 MiB           
+cachyos-extra-v3/libvorbis                   1.3.7-4.1                     0.95 MiB           
+cachyos-extra-v3/libvpl                      2.17.0-1.1                    1.05 MiB           
+cachyos-extra-v3/libvpx                      1.17.0-1.1                    3.79 MiB           
+extra/libwacom                               2.20.0-1                      1.61 MiB           
+cachyos-extra-v3/libwbclient                 2:4.25.1-1.1                  0.12 MiB           
+cachyos-extra-v3/libwebp                     1.6.0-2.1                     1.66 MiB           
+cachyos-extra-v3/libwireplumber              0.5.19-1.1                    1.79 MiB           
+cachyos-extra-v3/libx11                      1.8.14-1.1                   10.00 MiB           
+cachyos-extra-v3/libxau                      1.0.12-1.1                    0.02 MiB           
+cachyos-extra-v3/libxaw                      1.0.16-2.1                    1.79 MiB           
+cachyos-extra-v3/libxcb                      1.17.0-1.2                    3.91 MiB           
+cachyos-extra-v3/libxcomposite               0.4.7-1.1                     0.02 MiB           
+cachyos-core-v3/libxcrypt                    4.5.2-1.1                     0.20 MiB           
+cachyos-extra-v3/libxcursor                  1.2.3-1.1                     0.07 MiB           
+cachyos-extra-v3/libxcvt                     0.1.3-1.1                     0.04 MiB           
+cachyos-extra-v3/libxdamage                  1.1.7-1.1                     0.02 MiB           
+cachyos-extra-v3/libxdmcp                    1.1.5-2.1                     0.13 MiB           
+cachyos-extra-v3/libxext                     1.3.7-1.1                     0.32 MiB           
+cachyos-extra-v3/libxfixes                   6.0.2-1.1                     0.04 MiB           
+cachyos-extra-v3/libxfont2                   2.0.9-1.1                     0.25 MiB           
+cachyos-extra-v3/libxft                      2.3.9-1.2                     0.16 MiB           
+cachyos-extra-v3/libxi                       1.8.4-1.1                     0.42 MiB           
+cachyos-extra-v3/libxinerama                 1.1.6-1.1                     0.02 MiB           
+cachyos-extra-v3/libxkbcommon                1.13.2-1.1                    1.11 MiB           
+cachyos-extra-v3/libxkbcommon-x11            1.13.2-1.1                    0.10 MiB           
+cachyos-extra-v3/libxkbfile                  1.2.0-1.1                     0.21 MiB           
+cachyos-core-v3/libxml2                      2.15.4-1.1                    3.29 MiB           
+cachyos-extra-v3/libxmlb                     0.3.30-1.1                    1.25 MiB           
+cachyos-extra-v3/libxmu                      1.3.1-1.1                     0.34 MiB           
+cachyos-extra-v3/libxpm                      3.5.20-1.1                    0.20 MiB           
+cachyos-extra-v3/libxrandr                   1.5.5-1.1                     0.08 MiB           
+cachyos-extra-v3/libxrender                  0.9.13-1.1                    0.10 MiB           
+cachyos-extra-v3/libxshmfence                1.3.3-1.1                     0.02 MiB           
+cachyos-extra-v3/libxslt                     1.1.45-2.1                    0.80 MiB           
+cachyos-extra-v3/libxss                      1.2.5-1.1                     0.03 MiB           
+cachyos-extra-v3/libxt                       1.3.1-1.1                     2.04 MiB           
+cachyos-extra-v3/libxtst                     1.2.6-1.1                     0.11 MiB           
+cachyos-extra-v3/libxv                       1.0.13-1.1                    0.06 MiB           
+cachyos-extra-v3/libxxf86vm                  1.1.7-1.1                     0.04 MiB           
+cachyos-extra-v3/libzip                      1.11.4-2.1                    0.50 MiB           
+core/licenses                                20240728-1                    1.54 MiB           
+extra/lilv                                   0.28.0-1                      0.20 MiB           
+cachyos-v3/linux-api-headers                 1:7.1-1                       6.95 MiB           
+cachyos-extra-v3/litehtml                    0.10-2.1                      1.64 MiB           
+extra/llvm-libs                              23.1.5-1                    164.89 MiB  41.45 MiB
+cachyos-extra-v3/lm_sensors                  1:3.6.2-1.1                   0.49 MiB           
+cachyos-extra-v3/lmdb                        0.9.35-1.1                    0.45 MiB           
+cachyos-extra-v3/lua                         5.5.1-1.1                     1.85 MiB           
+cachyos-extra-v3/lua54                       5.4.9-1.1                     1.75 MiB           
+cachyos-extra-v3/lv2                         1.18.10-2.1                   0.98 MiB           
+cachyos-v3/lz4                               1:1.11.1-2                    0.49 MiB           
+cachyos-core-v3/lzo                          2.10-5.1                      0.47 MiB           
+extra/mailcap                                2.1.54-3                      0.11 MiB           
+cachyos-extra-v3/marisa                      0.3.1-2.1                     0.43 MiB           
+cachyos-extra-v3/md4c                        0.6.0-2.1                     0.23 MiB           
+core/mdadm                                   4.6-2                         1.02 MiB           
+extra/media-player-info                      26-1                          0.18 MiB           
+cachyos-v3/mesa                              3:26.2.6-1                   63.00 MiB           
+cachyos-extra-v3/milou                       6.8.2-1.1                     0.54 MiB           
+cachyos-core-v3/minizip                      1:1.4-1.1                     0.10 MiB           
+cachyos-core-v3/mkinitcpio-busybox           1.36.1-1.1                    0.51 MiB           
+extra/mobile-broadband-provider-info         20261111-1                    0.51 MiB           
+cachyos-extra-v3/modemmanager                1.24.2-2.1                    5.08 MiB           
+cachyos-extra-v3/modemmanager-qt             6.31.0-1.1                    0.99 MiB           
+cachyos-extra-v3/mpdecimal                   4.0.1-3.1                     0.34 MiB           
+cachyos-core-v3/mpfr                         4.2.2-1.1                     1.03 MiB           
+cachyos-extra-v3/mpg123                      1.33.7-1.1                    1.43 MiB           
+cachyos-extra-v3/mtdev                       1.1.7-1.1                     0.05 MiB           
+cachyos-core-v3/ncurses                      6.6-2.1                       4.20 MiB           
+cachyos-core-v3/nettle                       4.0-1.1                       1.10 MiB           
+cachyos-extra-v3/networkmanager-qt           6.31.0-1.1                    1.84 MiB           
+cachyos-extra-v3/nftables                    1:1.1.7-3.1                   1.33 MiB           
+extra/noto-fonts-emoji                       1:20260924-1                 10.24 MiB           
+cachyos-core-v3/npth                         1.8-1.1                       0.08 MiB           
+cachyos-core-v3/nspr                         4.40-1.1                      0.71 MiB           
+cachyos-core-v3/nss                          3.133-1.1                     6.29 MiB           
+extra/numactl                                2.0.19-1                      0.24 MiB           
+extra/ocean-sound-theme                      6.8.2-1                       2.08 MiB           
+cachyos-extra-v3/ocl-icd                     2.3.5-1.1                     0.53 MiB           
+cachyos-extra-v3/onetbb                      2023.2.0-1.1                  2.20 MiB           
+cachyos-extra-v3/opencc                      1.4.2-1.1                    21.02 MiB           
+cachyos-extra-v3/opencore-amr                0.1.6-2.1                     0.47 MiB           
+cachyos-extra-v3/openexr                     3.5.4-1.1                     5.16 MiB           
+cachyos-extra-v3/openh264                    2.7.0-1.1                     3.37 MiB           
+cachyos-extra-v3/openjpeg2                   2.5.4-1.1                    13.51 MiB           
+cachyos-extra-v3/openjph                     0.33.0-1.1                    0.93 MiB           
+cachyos-core-v3/openssh                      10.6p1-3.1                    8.28 MiB           
+core/openssl                                 4.1.0-1                      12.60 MiB           
+cachyos-core-v3/openssl-3                    3.5.9-2.1                     9.52 MiB           
+cachyos-extra-v3/opus                        1.6.1-1.1                     4.42 MiB           
+cachyos-extra-v3/orc                         0.4.44-1.1                    1.80 MiB           
+cachyos-core-v3/p11-kit                      0.26.6-1.1                    1.27 MiB   0.28 MiB
+cachyos/pacman                               7.1.0.r9.g54d9411-6          10.15 MiB           
+core/pacman-mirrorlist                       20260610-1                    0.03 MiB           
+cachyos-core-v3/pam                          1.7.3-1.1                     2.98 MiB           
+core/pambase                                 20260616-1                    0.00 MiB           
+cachyos-extra-v3/pango                       1:1.58.2-1.1                  2.44 MiB           
+cachyos-extra-v3/parted                      3.8-1.1                       2.73 MiB           
+cachyos-core-v3/pciutils                     3.15.0-1.1                    0.47 MiB           
+cachyos-core-v3/pcre                         8.45-5.1                      3.74 MiB           
+cachyos-core-v3/pcre2                        10.49-1.1                     7.86 MiB           
+cachyos-extra-v3/pcsclite                    2.5.3-1.1                     0.32 MiB           
+cachyos-core-v3/perl                         5.44.0-1.1                   62.41 MiB           
+cachyos-core-v3/pinentry                     1.3.3-1.1                     0.67 MiB           
+extra/pipewire-audio                         1:1.6.11-1                    4.45 MiB           
+cachyos-extra-v3/pixman                      0.46.4-1.1                    1.37 MiB           
+cachyos-extra-v3/plasma-activities           6.8.2-1.1                     0.48 MiB           
+cachyos-extra-v3/plasma-activities-stats     6.8.2-1.1                     0.30 MiB           
+cachyos-extra-v3/plasma5support              6.8.2-1.1                     9.44 MiB           
+cachyos-extra-v3/polkit                      128-1.1                       2.00 MiB           
+extra/polkit-qt6                             0.201.1-1                     0.35 MiB           
+cachyos-extra-v3/poppler                     26.10.0-2.1                   7.20 MiB           
+cachyos-extra-v3/poppler-qt6                 26.10.0-2.1                   0.93 MiB           
+cachyos-core-v3/popt                         1.19-2.1                      0.24 MiB           
+cachyos-extra-v3/portaudio                   1:19.7.0-4.1                  0.36 MiB           
+cachyos-core-v3/ppp                          2.5.5-2.1                     0.98 MiB           
+cachyos-extra-v3/prison                      6.31.0-1.1                    0.31 MiB           
+cachyos-core-v3/procps-ng                    4.0.7-1.1                     2.66 MiB           
+cachyos-extra-v3/protobuf                    36.1-1.1                     20.30 MiB           
+cachyos-extra-v3/protobuf-c                  1.5.2-15.1                    0.43 MiB           
+cachyos-core-v3/psmisc                       23.7-2.1                      0.79 MiB           
+cachyos-extra-v3/pulseaudio-qt               1.9.0-1.1                     0.65 MiB           
+cachyos/python                               3.14.9-2                     75.18 MiB           
+extra/qca-qt6                                2.3.12-3                      3.44 MiB           
+extra/qcoro                                  0.13.0-2                      0.72 MiB           
+cachyos-extra-v3/qqc2-breeze-style           6.8.2-1.1                     3.83 MiB           
+cachyos-extra-v3/qqc2-desktop-style          6.31.0-1.1                    4.13 MiB           
+cachyos-extra-v3/qrencode                    4.1.1-4.10                    0.14 MiB           
+cachyos-extra-v3/qt6-5compat                 6.12.0-1.1                    2.37 MiB           
+cachyos-extra-v3/qt6-base                    6.12.0-5.1                   68.68 MiB           
+cachyos-extra-v3/qt6-declarative             6.12.0-4.1                  136.14 MiB           
+cachyos-extra-v3/qt6-location                6.12.0-1.1                    3.32 MiB           
+cachyos-extra-v3/qt6-multimedia              6.12.0-1.1                    6.92 MiB           
+cachyos-extra-v3/qt6-multimedia-ffmpeg       6.12.0-1.1                    3.24 MiB           
+cachyos-extra-v3/qt6-positioning             6.12.0-1.1                    1.80 MiB           
+cachyos-extra-v3/qt6-shadertools             6.12.0-1.1                    5.71 MiB           
+cachyos-extra-v3/qt6-speech                  6.12.0-1.1                    0.62 MiB           
+cachyos-extra-v3/qt6-svg                     6.12.0-1.1                    1.03 MiB           
+cachyos-extra-v3/qt6-tools                   6.12.0-1.1                   22.61 MiB           
+extra/qt6-translations                       6.12.0-1                     15.91 MiB           
+cachyos-extra-v3/qt6-virtualkeyboard         6.12.0-1.1                    6.38 MiB           
+cachyos-extra-v3/qt6-webchannel              6.12.0-1.1                    0.52 MiB           
+extra/qt6-webengine                          6.11.3-2                    283.36 MiB           
+cachyos-extra-v3/qt6-websockets              6.12.0-1.1                    0.43 MiB           
+extra/qtkeychain-qt6                         0.18.0-1                      0.26 MiB           
+cachyos-extra-v3/rav1e                       0.8.1-3.1                     7.44 MiB           
+cachyos-extra-v3/re2                         2:2025.11.05-6.1              0.63 MiB           
+cachyos-core-v3/readline                     8.3.6-1.1                     1.54 MiB           
+cachyos-v3/ripgrep                           15.2.0-1                      3.57 MiB           
+cachyos-extra-v3/ripgrep-all                 0.10.10-3.1                  12.53 MiB           
+cachyos-extra-v3/rubberband                  4.0.0-2.1                     1.71 MiB           
+cachyos-extra-v3/sbc                         2.2-1.1                       0.43 MiB           
+cachyos-extra-v3/sdl2-compat                 2.32.74-1.1                   3.15 MiB           
+cachyos-extra-v3/sdl3                        3.4.20-1.1                    8.33 MiB           
+cachyos-core-v3/sed                          4.10-2.1                      0.73 MiB           
+cachyos-extra-v3/serd                        0.32.10-1.1                   0.17 MiB           
+cachyos-extra-v3/shaderc                     2026.4-1.1                    0.69 MiB           
+cachyos-core-v3/shadow                       4.20.0.arch1-1.1              3.67 MiB           
+cachyos-extra-v3/shared-mime-info            2.5.1-2.1                     5.82 MiB           
+cachyos-extra-v3/slang                       2.3.3-4.1                     4.04 MiB           
+cachyos-extra-v3/smbclient                   2:4.25.1-1.1                 30.07 MiB           
+cachyos-extra-v3/snappy                      1.3.1-1.1                     0.12 MiB           
+cachyos-extra-v3/sndio                       1.10.0-1.4                    0.36 MiB           
+cachyos-extra-v3/socat                       1.8.1.3-2.1                   0.66 MiB           
+cachyos-extra-v3/solid                       6.31.0-1.1                    2.19 MiB           
+cachyos-extra-v3/sonnet                      6.31.0-1.1                    1.79 MiB           
+cachyos-extra-v3/sord                        0.16.22-1.1                   0.12 MiB           
+extra/sound-theme-freedesktop                0.8-6                         0.45 MiB           
+extra/spandsp                                0.0.6-7                       1.59 MiB           
+cachyos-extra-v3/spdlog                      1.17.0-2.1                    0.73 MiB           
+cachyos-extra-v3/speex                       1.2.1-3.1                     0.73 MiB           
+cachyos-extra-v3/speexdsp                    1.2.1-3.1                     0.60 MiB           
+cachyos-extra-v3/spirv-tools                 1:1.4.363.0-1.1               8.37 MiB           
+cachyos-v3/sqlite                            3.54.0-1                     16.65 MiB           
+cachyos-extra-v3/sratom                      0.6.22-1.1                    0.06 MiB           
+cachyos-extra-v3/srt                         1.5.7-3.1                     1.61 MiB           
+cachyos-v3/svt-av1                           4.2.0-1                       7.07 MiB           
+cachyos-extra-v3/syndication                 6.31.0-1.1                    0.80 MiB           
+cachyos-extra-v3/syntax-highlighting         6.31.0-1.1                   10.27 MiB           
+core/systemd                                 262.2-1                      40.65 MiB           
+core/systemd-libs                            262.2-1                       3.78 MiB           
+core/systemd-sysvcompat                      262.2-1                       0.00 MiB           
+cachyos-extra-v3/systemsettings              6.8.2-1.1                     1.29 MiB           
+cachyos-extra-v3/taglib                      2.3.2-1.1                     2.47 MiB           
+cachyos-extra-v3/talloc                      2.5.0-2.1                     0.20 MiB           
+core/tar                                     1.35-5                        2.80 MiB           
+cachyos-extra-v3/tdb                         1.4.15-2.1                    0.26 MiB           
+cachyos-extra-v3/tevent                      1:0.17.2-2.1                  0.22 MiB           
+extra/tinysparql                             3.12.0-1                      3.92 MiB           
+cachyos-core-v3/tpm2-tss                     4.2.1-2.1                     3.93 MiB           
+cachyos-extra-v3/tslib                       1.24-1.1                      0.49 MiB           
+extra/ttf-hack                               3.003-7                       1.21 MiB           
+cachyos-core-v3/tzdata                       2026f-1.1                     1.69 MiB           
+cachyos-extra-v3/udisks2                     2.12.0-1.1                    8.16 MiB           
+cachyos-extra-v3/union                       6.8.2-1.1                     5.19 MiB           
+cachyos-extra-v3/upower                      1.91.5-1.1                    0.86 MiB           
+cachyos-core-v3/util-linux                   2.42.4-1.1                   20.14 MiB           
+cachyos-core-v3/util-linux-libs              2.42.4-1.1                    1.53 MiB           
+cachyos-extra-v3/v4l-utils                   1.32.0-2.1                   11.82 MiB           
+cachyos-extra-v3/vapoursynth                 81-1.1                       14.05 MiB           
+cachyos-extra-v3/vid.stab                    1.1.2-1.1                     0.53 MiB           
+cachyos-extra-v3/vmaf                        3.2.1-1.1                     7.69 MiB           
+cachyos-extra-v3/volume_key                  0.3.12-12.1                   0.68 MiB           
+cachyos-extra-v3/vulkan-icd-loader           1.4.363.0-1.1                 0.67 MiB           
+cachyos-extra-v3/wayland                     1.26.0-1.1                    0.87 MiB           
+cachyos-extra-v3/webrtc-audio-processing-1   1.3-6.1                       1.75 MiB           
+core/wireless-regdb                          2026.09.03-1                  0.02 MiB           
+cachyos-extra-v3/x264                        3:0.165.r3222.b35605a-2.1     4.54 MiB           
+cachyos-extra-v3/x265                        4.3-1.1                      20.27 MiB           
+cachyos-extra-v3/xcb-imdkit                  1.0.9-1.1                     0.62 MiB           
+extra/xcb-proto                              1.17.0-4                      1.03 MiB           
+cachyos-extra-v3/xcb-util                    0.4.1-2.2                     0.04 MiB           
+cachyos-extra-v3/xcb-util-cursor             0.1.6-1.1                     0.03 MiB           
+cachyos-extra-v3/xcb-util-image              0.4.1-3.1                     0.05 MiB           
+cachyos-extra-v3/xcb-util-keysyms            0.4.1-5.1                     0.02 MiB           
+cachyos-extra-v3/xcb-util-renderutil         0.3.10-2.1                    0.03 MiB           
+cachyos-extra-v3/xcb-util-wm                 0.4.2-2.1                     0.21 MiB           
+cachyos-extra-v3/xdg-desktop-portal          1.22.1-2.1                    1.96 MiB           
+cachyos-extra-v3/xdg-desktop-portal-gtk      1.15.3-2.1                    0.43 MiB           
+extra/xdg-utils                              1.2.1-2                       0.30 MiB           
+cachyos-extra-v3/xf86-input-libinput         1.5.0-1.2                     0.11 MiB           
+extra/xkeyboard-config                       2.49-1                       10.37 MiB           
+extra/xorg-fonts-encodings                   1.1.0-2                       0.61 MiB           
+cachyos-extra-v3/xorg-server                 21.1.26-1.1                   4.96 MiB           
+cachyos-extra-v3/xorg-server-common          21.1.26-1.1                   0.12 MiB           
+cachyos-extra-v3/xorg-setxkbmap              1.3.5-1.1                     0.03 MiB           
+cachyos-extra-v3/xorg-xauth                  1.1.5-1.1                     0.05 MiB           
+cachyos-extra-v3/xorg-xkbcomp                1.5.0-1.1                     0.27 MiB           
+cachyos-extra-v3/xorg-xmessage               1.0.7-2.1                     0.03 MiB           
+cachyos-extra-v3/xorg-xprop                  1.2.8-1.1                     0.05 MiB           
+cachyos-extra-v3/xorg-xrdb                   1.2.3-1.1                     0.05 MiB           
+extra/xorg-xwayland                          24.1.15-1                     2.35 MiB           
+extra/xorgproto                              2026.1-1                      1.47 MiB           
+cachyos-extra-v3/xsettingsd                  1.0.4-2.1                     0.07 MiB           
+cachyos-extra-v3/xvidcore                    1.3.7-4.1                     0.86 MiB           
+extra/xxhash                                 0.8.4-1                       0.42 MiB           
+cachyos-v3/xz                                5.8.3-1                       1.78 MiB           
+cachyos-extra-v3/yoga                        3.2.2-1.1                     0.28 MiB           
+cachyos-extra-v3/zeromq                      4.3.5-3.1                     3.11 MiB           
+cachyos-extra-v3/zimg                        3.0.6-2.1                     0.80 MiB           
+cachyos-extra-v3/zint                        2.16.0-2.1                    0.95 MiB           
+cachyos-extra-v3/zix                         0.8.2-1.1                     0.14 MiB           
+cachyos-core-v3/zlib                         1:1.4-1.1                     0.25 MiB           
+cachyos-extra-v3/zram-generator              1.2.1-1.1                     0.86 MiB           
+cachyos-v3/zstd                              1.5.7-4                       2.05 MiB           
+cachyos-extra-v3/zxing-cpp                   3.1.1-1.1                     2.19 MiB           
+cachyos/archlinux-keyring                    1:20260909-1                  1.73 MiB           
+cachyos-extra-v3/ark                         26.08.3-1.1                   5.36 MiB           
+core/base                                    3-3                           0.00 MiB           
+extra/bash-completion                        2.18.0-1                      0.99 MiB           
+extra/breeze-gtk                             6.8.2-1                       1.16 MiB           
+core/btrfs-progs                             7.3-1                         6.78 MiB           
+cachyos/cachyos-hooks                        2026.10.23-1                  0.01 MiB           
+cachyos/cachyos-keyring                      20240331-1                    0.00 MiB           
+cachyos/cachyos-mirrorlist                   27-1                          0.00 MiB           
+cachyos/cachyos-settings                     1:1.4.4-1                     0.07 MiB           
+cachyos/cachyos-v3-mirrorlist                27-1                          0.00 MiB           
+cachyos-extra-v3/dolphin                     26.08.3-1.1                  16.67 MiB           
+cachyos-core-v3/dosfstools                   4.2-5.1                       0.43 MiB           
+cachyos-core-v3/e2fsprogs                    1.47.4-1.1                    5.39 MiB           
+cachyos-core-v3/efibootmgr                   18-4.1                        0.09 MiB           
+cachyos-extra-v3/fcitx5                      5.1.23-1.1                   18.43 MiB           
+cachyos-extra-v3/fcitx5-chinese-addons       5.1.15-2.1                    4.36 MiB           
+cachyos-extra-v3/fcitx5-configtool           5.1.16-3.1                    1.93 MiB           
+cachyos-extra-v3/fcitx5-gtk                  5.1.7-1.1                     0.34 MiB           
+cachyos-extra-v3/fcitx5-qt                   5.1.16-2.1                    1.84 MiB           
+cachyos-extra-v3/firefox                     160.0-1.1                   306.80 MiB           
+cachyos-core-v3/grub                         2:2.16-1.1                   43.16 MiB           
+extra/gvfs                                   1.62.0-3                      5.05 MiB           
+extra/intel-ucode                            20261110-1                   34.32 MiB           
+cachyos-extra-v3/kate                        26.08.3-1.1                  36.94 MiB           
+cachyos-extra-v3/kde-gtk-config              6.8.2-1.1                     0.34 MiB           
+cachyos-extra-v3/konsole                     26.08.3-1.1                  10.83 MiB           
+cachyos-extra-v3/kscreen                     6.8.2-1.1                     3.75 MiB           
+cachyos-extra-v3/kwallet-pam                 6.8.2-1.1                     0.03 MiB           
+cachyos-v3/linux-cachyos                     7.3.3-1                     150.21 MiB           
+cachyos/linux-firmware-nvidia                1:20261019-1                104.02 MiB           
+cachyos/linux-firmware-other                 1:20261019-1                 20.53 MiB           
+cachyos/linux-firmware-realtek               1:20261019-1                  8.64 MiB           
+cachyos/linux-firmware-whence                1:20261019-1                  0.49 MiB           
+cachyos-core-v3/man-db                       2.13.1-2.1                    2.48 MiB           
+core/mkinitcpio                              42.2-1                        0.21 MiB           
+cachyos-core-v3/nano                         9.3-1.1                       2.90 MiB           
+extra/networkmanager                         1.58.1-3                     18.09 MiB           
+extra/noto-fonts                             1:2026.11.01-1              106.82 MiB           
+extra/noto-fonts-cjk                         20240730-1                  298.79 MiB           
+cachyos-extra-v3/ntfs-3g                     2026.9.28-1.1                 0.17 MiB           
+cachyos-extra-v3/os-prober                   1.85-1.1                      0.06 MiB           
+extra/pipewire                               1:1.6.11-1                    1.30 MiB           
+extra/pipewire-alsa                          1:1.6.11-1                    0.00 MiB           
+extra/pipewire-jack                          1:1.6.11-1                    0.68 MiB           
+extra/pipewire-pulse                         1:1.6.11-1                    0.55 MiB           
+cachyos-extra-v3/plasma-desktop              6.8.2-1.1                    42.78 MiB           
+cachyos-extra-v3/plasma-integration          6.8.2-1.1                     0.43 MiB           
+cachyos-extra-v3/plasma-nm                   6.8.2-2.1                    14.37 MiB           
+cachyos-extra-v3/plasma-pa                   6.8.2-1.1                     2.64 MiB           
+cachyos-extra-v3/plasma-workspace            6.8.2-1.1                    59.71 MiB           
+cachyos-extra-v3/polkit-kde-agent            6.8.2-1.1                     0.26 MiB           
+cachyos-extra-v3/powerdevil                  6.8.2-1.1                     6.98 MiB           
+cachyos-v3/sddm                              0.21.0-8                      5.33 MiB           
+cachyos-core-v3/sudo                         1.9.17.p2-7.1                 8.14 MiB           
+extra/ttf-dejavu                             2.37+18+g9b5d1b2f-8           9.79 MiB           
+cachyos-extra-v3/wireplumber                 0.5.19-1.1                    1.35 MiB           
+cachyos-core-v3/wpa_supplicant               2:2.12-2.1                   10.21 MiB           
+cachyos-extra-v3/xdg-desktop-portal-kde      6.8.2-1.1                     3.22 MiB           
+cachyos-extra-v3/xdg-user-dirs               0.20-1.1                      0.17 MiB           
+
+下载大小：  42.79 MiB
+
+:: 进行下载吗？ [Y/n] 
+:: 正在获取软件包......
+llvm-libs-23.1.5-1-x86_64正在下载……
+libp11-kit-0.26.6-1.1-x86_64_v3正在下载……
+dbus-1.16.4-1.1-x86_64_v3正在下载……
+p11-kit-0.26.6-1.1-x86_64_v3正在下载……
+正在检查密钥环......
+正在检查软件包完整性...
+==> 完成：repo 内 688 个包，1.5G
